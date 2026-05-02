@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://resources/main_desktop.gd" id="1_esr1u"]
 [ext_resource type="Texture2D" uid="uid://cg3iu7pnkii44" path="res://assets/Desktop/backgroundwwindows95.png" id="2_a5r2x"]
 [ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="3_10mrj"]
+[ext_resource type="Texture2D" uid="uid://cly1siep15e67" path="res://assets/Desktop/flowericon.png" id="3_wncl7"]
 [ext_resource type="Texture2D" uid="uid://cvps7y3u17m27" path="res://assets/Desktop/clickedfoldericon.png" id="4_5ru2d"]
 [ext_resource type="Texture2D" uid="uid://bcxk1wxxp6x56" path="res://assets/Desktop/hoverfoldericon.png" id="5_xmugq"]
 [ext_resource type="Texture2D" uid="uid://cir38v2p4mkw3" path="res://assets/Desktop/browsericon.png" id="6_esr1u"]
@@ -31,8 +32,12 @@ color = Color(0.11372549, 0.16862746, 0.21960784, 1)
 
 [node name="TextureButton" type="TextureButton" parent="DesktopUI" unique_id=1285768504]
 offset_top = 1020.0
-offset_right = 60.0
-offset_bottom = 1080.0
+offset_right = 19.0
+offset_bottom = 1039.0
+scale = Vector2(3.15, 3.15)
+texture_normal = ExtResource("3_wncl7")
+texture_pressed = ExtResource("3_wncl7")
+texture_hover = ExtResource("3_wncl7")
 
 [node name="ClockLabel" type="Label" parent="DesktopUI" unique_id=1583174997]
 anchors_preset = 3
