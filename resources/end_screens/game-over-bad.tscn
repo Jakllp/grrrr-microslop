@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cghpn7i7wngdv"]
+
+[ext_resource type="Script" uid="uid://shwf1o0bmm47" path="res://resources/end_screens/game_over.gd" id="1_il115"]
+[ext_resource type="Texture2D" uid="uid://cdclvlf6f01g2" path="res://assets/images/96302.webp" id="2_7hixy"]
+
+[node name="GameOverBad" type="Control" unique_id=142773003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_il115")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=935655202]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_7hixy")
+
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=1758562479]
+modulate = Color(1, 1, 1, 0.14509805)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RestartGameButton" type="Button" parent="TextureRect" unique_id=1321126034]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 768.0
+offset_right = 1056.0
+offset_bottom = 832.0
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect" unique_id=318478308]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 256.0
+offset_right = 1280.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 20
+value = 50.0
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1914549254]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 192.0
+offset_right = 1063.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 32
+text = "AI Slop meter"
+
+[connection signal="pressed" from="TextureRect/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
