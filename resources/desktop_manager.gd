@@ -38,7 +38,7 @@ var open_windows = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var buttons = $"../DesktopUI/AppIcons".get_children()#
+	var buttons = $"../DesktopUI/AppIcons".get_children()
 	for butt :DesktopIcon in buttons:
 		butt.pressed.connect(_on_desktop_icon_clicked.bind(butt))
 

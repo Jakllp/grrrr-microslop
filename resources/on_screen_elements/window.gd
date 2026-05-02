@@ -18,7 +18,6 @@ func set_content(new_content: Control) -> void:
 	new_content.offset_top = 0
 	new_content.offset_right = 0
 	new_content.offset_bottom = 0
-	print(new_content.size)
 	
 var program :DesktopManager.PROGRAMS
 
