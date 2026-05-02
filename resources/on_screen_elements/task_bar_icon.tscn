@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7jvi234urlwl"]
 
+[ext_resource type="Texture2D" uid="uid://bkddqer1n30ut" path="res://assets/icons/icon.svg" id="1_3s2f6"]
 [ext_resource type="Script" uid="uid://rbm7bj4iajqf" path="res://resources/on_screen_elements/task_bar_icon.gd" id="1_6727h"]
 
 [node name="TaskBarIcon" type="TextureButton" unique_id=1568013095]
@@ -8,4 +9,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = ExtResource("1_3s2f6")
 script = ExtResource("1_6727h")

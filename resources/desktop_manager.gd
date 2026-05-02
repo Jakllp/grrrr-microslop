@@ -3,6 +3,7 @@ extends Node2D
 
 var window_scene = preload("res://resources/on_screen_elements/window.tscn")
 var notepad_scene = preload("res://resources/window_content/NotepadApp.tscn")
+var taskbaricon_scene = preload("res://resources/on_screen_elements/task_bar_icon.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -56,8 +57,10 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	
 	# Setup Window
 	var window = window_scene.instantiate()
+	var taskbar_icon = taskbaricon_scene.instantiate()
+	
+	open_windows.get_or_add(program, [window, open_windows.size() + 1, taskbar_icon])
 	$"../DesktopUI".add_child(window)
-	open_windows.get_or_add(program, [window, open_windows.size() + 1])
 	#Set variables
 	window.z_index = open_windows.get(program)[1]
 	window.icon = icon_for_program[program]
@@ -72,9 +75,12 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	window.program = program
 	window.on_close.connect(_close_window)
 	
-	#TODO taskbar
+	$"../DesktopUI/TaskBar/OpenPrograms".add_child(taskbar_icon)
+	taskbar_icon.program = program
+	taskbar_icon.pressed.connect(_push_to_front.bind(program))
 
 func _close_window(program :PROGRAMS) -> void:
+	open_windows.get(program)[2].queue_free()
 	open_windows.erase(program)
 	#TODO taskbar
 
