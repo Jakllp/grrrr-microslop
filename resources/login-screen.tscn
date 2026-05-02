@@ -1,9 +1,105 @@
 [gd_scene format=3 uid="uid://coyviatfwi1cw"]
 
-[node name="LoginScreen" type="Control" unique_id=1604005938]
+[ext_resource type="Script" uid="uid://berysl7cnp6ja" path="res://resources/login_screen.gd" id="1_vyag6"]
+
+[node name="LoginScreen" type="Control" unique_id=535412264]
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vyag6")
+
+[node name="Background" type="ColorRect" parent="." unique_id=961287510]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.22677776, 0.31375915, 0.36163056, 1)
+
+[node name="LoginPanel" type="Panel" parent="." unique_id=282672486]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 358.0
+offset_right = 1140.0
+offset_bottom = 658.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoginPanel" unique_id=1929665074]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel3" type="Label" parent="LoginPanel" unique_id=1195547988]
+layout_mode = 0
+offset_left = 39.000023
+offset_top = 130.0
+offset_right = 95.00003
+offset_bottom = 147.0
+scale = Vector2(1.25, 1.25)
+theme_override_font_sizes/font_size = 12
+text = "Password"
+horizontal_alignment = 1
+
+[node name="TitleLabel2" type="Label" parent="LoginPanel" unique_id=1164318138]
+layout_mode = 0
+offset_left = 56.000015
+offset_top = 85.0
+offset_right = 88.000015
+offset_bottom = 102.0
+scale = Vector2(1.25, 1.25)
+theme_override_font_sizes/font_size = 12
+text = "Login"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="LoginPanel" unique_id=432527922]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 25.0
+offset_right = 269.0
+offset_bottom = 50.0
+scale = Vector2(1.25, 1.25)
+text = "WORKSTATION SAHUR"
+horizontal_alignment = 1
+
+[node name="UsernameInput" type="LineEdit" parent="LoginPanel" unique_id=848283017]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 81.0
+offset_right = 288.0
+offset_bottom = 112.0
+
+[node name="PasswordInput" type="LineEdit" parent="LoginPanel" unique_id=932889928]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 126.0
+offset_right = 288.0
+offset_bottom = 157.0
+secret = true
+
+[node name="ErrorLabel" type="Label" parent="LoginPanel" unique_id=2112656677]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 170.0
+offset_right = 287.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.9427091, 4.47616e-06, 1.732707e-06, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintLabel" type="Label" parent="LoginPanel" unique_id=1062362637]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 197.0
+offset_right = 327.0
+offset_bottom = 222.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(1, 0.40724552, 0.338652, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoginButton" type="Button" parent="LoginPanel" unique_id=202014179]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 228.0
+offset_right = 252.0
+offset_bottom = 259.0
+text = "Login"
