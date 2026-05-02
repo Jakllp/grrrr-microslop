@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://dl2ef80pa313"]
 
-[ext_resource type="PackedScene" uid="uid://c6gdnab50jusu" path="res://resources/cursor.tscn" id="1_yrbus"]
+[ext_resource type="PackedScene" uid="uid://dvdq11yhac6te" path="res://resources/components/clickable.tscn" id="1_a5r2x"]
+[ext_resource type="Script" uid="uid://bkxnciq5ob6q6" path="res://resources/main_desktop.gd" id="1_jtc5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5r2x"]
+size = Vector2(200, 200)
 
 [node name="MainDesktop" type="Node2D" unique_id=1698076857]
+script = ExtResource("1_jtc5m")
 
-[node name="Cursor" parent="." unique_id=1392486633 instance=ExtResource("1_yrbus")]
-position = Vector2(462, 788)
+[node name="DesktopIcons" type="Node2D" parent="." unique_id=988871498]
+
+[node name="Clickable" parent="DesktopIcons" unique_id=243330193 instance=ExtResource("1_a5r2x")]
+shape = SubResource("RectangleShape2D_a5r2x")
