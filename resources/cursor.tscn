@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6gdnab50jusu"]
+
+[ext_resource type="Script" uid="uid://bptqx6hooxdhw" path="res://resources/cursor.gd" id="1_hkv3q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r4hiv"]
+load_path = "res://.godot/imported/icon.svg-7c8e6dfe2213e2029f33175ecfc9166b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww4ox"]
+
+[node name="Cursor" type="Node2D" unique_id=1392486633]
+script = ExtResource("1_hkv3q")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=496278820]
+position = Vector2(10, 10)
+scale = Vector2(0.125, 0.125)
+texture = SubResource("CompressedTexture2D_r4hiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730341293]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_ww4ox")
