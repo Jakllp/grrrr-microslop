@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ednu2ua30hwp"]
+
+[ext_resource type="Script" uid="uid://shwf1o0bmm47" path="res://resources/end_screens/game_over.gd" id="1_78h6f"]
+[ext_resource type="Texture2D" uid="uid://d1lop4hmt2grq" path="res://assets/images/meme-get-paid-enough.jpg" id="2_78h6f"]
+
+[node name="GameOver" type="Control" unique_id=1967963354]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_78h6f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1354166890]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_78h6f")
+
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=1869700624]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RestartGameButton" type="Button" parent="TextureRect" unique_id=1065196667]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 768.0
+offset_right = 1056.0
+offset_bottom = 835.0
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect" unique_id=353231126]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 1408.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(0.99215686, 1, 1, 1)
+value = 50.0
+
+[node name="CongratulationsMessage" type="Label" parent="TextureRect" unique_id=1051660271]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 512.0
+offset_right = 1585.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
+theme_override_font_sizes/font_size = 48
+text = "Congratulations on finishing your workload for today!"
+
+[node name="AritificialIntelligenceMeter" type="Label" parent="TextureRect" unique_id=1973336420]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 328.0
+offset_right = 1062.0
+offset_bottom = 373.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
+theme_override_font_sizes/font_size = 32
+text = "AI Slop Meter"
+
+[connection signal="pressed" from="TextureRect/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
