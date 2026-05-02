@@ -102,4 +102,5 @@ offset_left = 152.0
 offset_top = 228.0
 offset_right = 252.0
 offset_bottom = 259.0
+mouse_default_cursor_shape = 2
 text = "Login"

@@ -8,8 +8,14 @@ extends Control
 
 func _ready():
 	login_button.pressed.connect(_on_login_pressed)
+	username_input.text_submitted.connect(_on_login_pressed)
+	password_input.text_submitted.connect(_on_login_pressed)
+	
+	await get_tree().process_frame
+	username_input.grab_focus()
+	username_input.select_all()
 
-func _on_login_pressed():
+func _on_login_pressed(_text = ""):
 	var username = username_input.text.strip_edges()
 	var password = password_input.text
 

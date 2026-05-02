@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqu3ntxgsdr6u"
-path="res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"
+uid="uid://dqd034wphpgmu"
+path="res://.godot/imported/hovernotepadicon.png-a859e4191541f7bff5d0a89c28e560dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Desktop/clickedbrowsericon.png"
-dest_files=["res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"]
+source_file="res://assets/Desktop/hovernotepadicon.png"
+dest_files=["res://.godot/imported/hovernotepadicon.png-a859e4191541f7bff5d0a89c28e560dc.ctex"]
 
 [params]
 

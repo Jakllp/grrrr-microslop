@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqu3ntxgsdr6u"
-path="res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"
+uid="uid://bwfoetuwtc4uk"
+path="res://.godot/imported/hoveredinlookicon.png-8c33710f23b854f4d8ff6d2de006ba4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Desktop/clickedbrowsericon.png"
-dest_files=["res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"]
+source_file="res://assets/Desktop/hoveredinlookicon.png"
+dest_files=["res://.godot/imported/hoveredinlookicon.png-8c33710f23b854f4d8ff6d2de006ba4a.ctex"]
 
 [params]
 
