@@ -15,10 +15,18 @@ run/main_scene="uid://coyviatfwi1cw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icons/icon.svg"
 
+[autoload]
+
+CursorHandler="*uid://xft0rhl6xmwm"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[global_group]
+
+clickable="Stuff that is clickable"
 
 [physics]
 
