@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://dl2ef80pa313"]
 
 [ext_resource type="Script" uid="uid://bkxnciq5ob6q6" path="res://resources/main_desktop.gd" id="1_esr1u"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://cg3iu7pnkii44" path="res://assets/Desktop/backgroundwwindows95.png" id="2_a5r2x"]
-[ext_resource type="Script" uid="uid://bonoqqshdw7q3" path="res://resources/pop_up_manager.gd" id="2_wncl7"]
-=======
-[ext_resource type="Script" uid="uid://myk7sfjoqmn" path="res://resources/TimeManager.gd" id="2_5fyvv"]
+[ext_resource type="Script" path="res://resources/TimeManager.gd" id="2_5fyvv"]
 [ext_resource type="Texture2D" uid="uid://cg3iu7pnkii44" path="res://assets/Desktop/backgroundwwindows95.png" id="2_a5r2x"]
 [ext_resource type="Script" uid="uid://ctcjwsbr1gglc" path="res://resources/desktop_manager.gd" id="2_bvuyt"]
->>>>>>> 2eed0f506f226b22735696c43701ae87768b34f0
+[ext_resource type="Script" path="res://resources/pop_up_manager.gd" id="2_wncl7"]
 [ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="3_10mrj"]
 [ext_resource type="Texture2D" uid="uid://cly1siep15e67" path="res://assets/Desktop/flowericon.png" id="3_wncl7"]
 [ext_resource type="Texture2D" uid="uid://bisfsgr4hhtq0" path="res://assets/Desktop/searchicon.png" id="4_2d4c4"]
