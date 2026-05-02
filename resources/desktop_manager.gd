@@ -21,6 +21,10 @@ var title_for_program = {
 	PROGRAMS.NOTES: "Notes"
 }
 
+var open_windows = {
+	
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var buttons = $"../DesktopUI/AppIcons".get_children()#
@@ -34,12 +38,29 @@ func _process(delta: float) -> void:
 	
 func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	var program = butt.program
+	
+	# Check if already exists
+	if open_windows.has(program):
+		_push_to_front(program)
+		return
+	
+	# Setup Window
 	var window = window_scene.instantiate()
 	$"../DesktopUI".add_child(window)
+	open_windows.get_or_add(program, [window, open_windows.size() + 1])
+	#Set variables
+	window.z_index = open_windows.get(program)[1]
 	window.icon = icon_for_program[program]
 	window.title = title_for_program[program]
 	window.position = _calculate_random_pos_near_center(window.size)
+	window.program = program
+	window.on_close.connect(_close_window)
+	
+	#TODO taskbar
 
+func _close_window(program :PROGRAMS) -> void:
+	open_windows.erase(program)
+	#TODO taskbar
 
 func _calculate_random_pos_near_center(window_size :Vector2) -> Vector2:
 	var x_space = get_viewport_rect().size.x - window_size.x
@@ -51,3 +72,14 @@ func _calculate_random_pos_near_center(window_size :Vector2) -> Vector2:
 	var x = x_space / 2 + rand_x
 	var y = y_space / 2 + rand_y
 	return Vector2(x, y)
+
+func _push_to_front(program :PROGRAMS) -> void:
+	var wanted_prog = open_windows.get(program)
+	var new_z = open_windows.size()
+	var previous_z = wanted_prog[1]
+	wanted_prog[0].z_index = new_z
+	wanted_prog[1] = new_z
+	for prog in open_windows.values():
+		if prog[1] > previous_z && prog != wanted_prog:
+			prog[1] -= 1
+			prog[0].z_index = prog[1]
