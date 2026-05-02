@@ -19,7 +19,6 @@ func advance_frame(delta :float) -> void:
 	if time_per_frame < time_since_last:
 		time_since_last = 0.0
 		cur_frame = (cur_frame + 1) % max_frames
-		print(cur_frame)
 		
 		# Switch the stuff
 		match(Input.get_current_cursor_shape()):

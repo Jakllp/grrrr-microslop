@@ -1,19 +1,23 @@
+class_name CustomWindow
 extends Control
 
-@export var content :Control
-@export var title = "WindowTitle" :
+@onready var icon_rect = $MainDivision/TopBar/Icon
+@onready var title_label = $MainDivision/TopBar/Title
+
+var content :Control
+var title = "WindowTitle" :
 	set(value):
-		$MainDivision/TopBar/Title.text = value
-@export var icon :Resource :
+		title_label.text = value
+var icon :Texture2D :
 	set(value):
-		$MainDivision/TopBar/TextureRect.texture = value
+		icon_rect.texture = value
 	
 
 var hue := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$MainDivision/TopBar/Title.text = title
-	$MainDivision/TopBar/TextureRect.texture = icon
+	print("Hello")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

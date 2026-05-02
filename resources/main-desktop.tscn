@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkxnciq5ob6q6" path="res://resources/main_desktop.gd" id="1_esr1u"]
 [ext_resource type="Texture2D" uid="uid://cg3iu7pnkii44" path="res://assets/Desktop/backgroundwwindows95.png" id="2_a5r2x"]
+[ext_resource type="Script" uid="uid://ctcjwsbr1gglc" path="res://resources/desktop_manager.gd" id="2_bvuyt"]
 [ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="3_10mrj"]
 [ext_resource type="Texture2D" uid="uid://cly1siep15e67" path="res://assets/Desktop/flowericon.png" id="3_wncl7"]
 [ext_resource type="Texture2D" uid="uid://cvps7y3u17m27" path="res://assets/Desktop/clickedfoldericon.png" id="4_5ru2d"]
@@ -9,11 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cir38v2p4mkw3" path="res://assets/Desktop/browsericon.png" id="6_esr1u"]
 [ext_resource type="Texture2D" uid="uid://cjmbtw8afi6ic" path="res://assets/Desktop/clickedbrowsericon.png" id="7_wncl7"]
 [ext_resource type="Texture2D" uid="uid://casb62d4a8id1" path="res://assets/Desktop/hoverbrowsericon.png" id="8_bvuyt"]
+[ext_resource type="Script" uid="uid://c3pjph0yxs668" path="res://resources/on_screen_elements/desktop_icon.gd" id="8_vodj4"]
 
 [node name="MainDesktop" type="Node2D" unique_id=1698076857]
 script = ExtResource("1_esr1u")
 
 [node name="DesktopManager" type="Node2D" parent="." unique_id=270647701]
+script = ExtResource("2_bvuyt")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1742308971]
 position = Vector2(960, 540)
@@ -78,20 +81,28 @@ offset_right = 18.0
 offset_bottom = 90.0
 scale = Vector2(10, 10)
 
-[node name="FolderIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1506193340]
+[node name="FolderIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1572488885]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_10mrj")
 texture_pressed = ExtResource("4_5ru2d")
 texture_hover = ExtResource("5_xmugq")
+script = ExtResource("8_vodj4")
+metadata/_custom_type_script = "uid://c3pjph0yxs668"
 
-[node name="BrowserIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1268240655]
+[node name="BrowserIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1652531731]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_esr1u")
 texture_pressed = ExtResource("7_wncl7")
 texture_hover = ExtResource("8_bvuyt")
+script = ExtResource("8_vodj4")
+program = 1
+metadata/_custom_type_script = "uid://c3pjph0yxs668"
 
-[node name="NotesIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=577880949]
+[node name="NotesIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=205343057]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+script = ExtResource("8_vodj4")
+program = 2
+metadata/_custom_type_script = "uid://c3pjph0yxs668"
