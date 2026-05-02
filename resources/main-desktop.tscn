@@ -50,16 +50,6 @@ offset_right = 1920.0
 grow_vertical = 0
 color = Color(0.11372549, 0.16862746, 0.21960784, 1)
 
-[node name="StartButton" type="TextureButton" parent="DesktopUI" unique_id=1285768504]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = -54.0
-offset_right = 31.0
-offset_bottom = -35.0
-grow_vertical = 0
-scale = Vector2(2.5, 2.5)
 [node name="OpenPrograms" type="HBoxContainer" parent="DesktopUI/TaskBar" unique_id=352438714]
 layout_mode = 1
 anchors_preset = 8
@@ -83,21 +73,6 @@ texture_normal = ExtResource("3_wncl7")
 texture_pressed = ExtResource("3_wncl7")
 texture_hover = ExtResource("3_wncl7")
 
-[node name="SearchButton" type="TextureButton" parent="DesktopUI" unique_id=929636586]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 81.00001
-offset_top = -54.0
-offset_right = 100.00001
-offset_bottom = -35.0
-grow_vertical = 0
-scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("4_2d4c4")
-texture_pressed = ExtResource("4_2d4c4")
-texture_hover = ExtResource("4_2d4c4")
-
-[node name="ClockLabel" type="Label" parent="DesktopUI" unique_id=1583174997]
 [node name="ClockLabel" type="Label" parent="DesktopUI/TaskBar" unique_id=1583174997]
 layout_mode = 1
 anchors_preset = 3
@@ -133,6 +108,33 @@ theme_override_font_sizes/font_size = 15
 text = "02.05.2026"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="DesktopUI" unique_id=16214399]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -54.0
+offset_right = 31.0
+offset_bottom = -35.0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SearchButton" type="TextureButton" parent="DesktopUI" unique_id=929636586]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 81.00001
+offset_top = -54.0
+offset_right = 100.00001
+offset_bottom = -35.0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("4_2d4c4")
+texture_pressed = ExtResource("4_2d4c4")
+texture_hover = ExtResource("4_2d4c4")
+
+[node name="ClockLabel" type="Label" parent="DesktopUI" unique_id=1672161531]
 
 [node name="AppIcons" type="GridContainer" parent="DesktopUI" unique_id=1196231045]
 offset_right = 40.0

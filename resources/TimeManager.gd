@@ -1,7 +1,7 @@
 extends Node
 
-@onready var time_label = $"../DesktopUI/ClockLabel"
-@onready var date_label = $"../DesktopUI/DateLabel"
+@onready var time_label = $"../DesktopUI/TaskBar/ClockLabel"
+@onready var date_label = $"../DesktopUI/TaskBar/DateLabel"
 
 var start_hour = 8
 var end_hour = 16
