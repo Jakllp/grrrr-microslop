@@ -83,5 +83,6 @@ texture_hover = ExtResource("4_mj4it")
 
 [node name="ContentContainer" type="Control" parent="MainDivision" unique_id=319626318]
 layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="pressed" from="MainDivision/TopBar/CloseButton" to="." method="_on_close_button_pressed"]

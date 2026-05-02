@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mnklyc6g5jri"]
+
+[ext_resource type="Script" uid="uid://d3lbnanvgk7px" path="res://resources/window_content/notepad_app.gd" id="1_lkxr6"]
+
+[node name="NotepadApp" type="Control" unique_id=160535637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -720.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lkxr6")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=603951327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

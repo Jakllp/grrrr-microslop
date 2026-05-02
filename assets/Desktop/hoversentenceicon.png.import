@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqu3ntxgsdr6u"
-path="res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"
+uid="uid://bifd8iclhicu8"
+path="res://.godot/imported/hoversentenceicon.png-89d302b03c5e64c862df2c2f360f0f74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Desktop/clickedbrowsericon.png"
-dest_files=["res://.godot/imported/clickedbrowsericon.png-294f2c5fbcc8b29a3700c413064e4253.ctex"]
+source_file="res://assets/Desktop/hoversentenceicon.png"
+dest_files=["res://.godot/imported/hoversentenceicon.png-89d302b03c5e64c862df2c2f360f0f74.ctex"]
 
 [params]
 

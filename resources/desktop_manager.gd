@@ -2,23 +2,33 @@ class_name DesktopManager
 extends Node2D
 
 var window_scene = preload("res://resources/on_screen_elements/window.tscn")
+var notepad_scene = preload("res://resources/window_content/NotepadApp.tscn")
 
 enum PROGRAMS {
 	FILES,
 	BROWSER,
-	NOTES
+	NOTES,
+	INLOOK,
+	SENTENCE,
+	FAIL
 }
 
 var icon_for_program = {
 	PROGRAMS.FILES: load("res://assets/Desktop/defaultfoldericon.png"),
-	PROGRAMS.BROWSER: load("res://assets/Desktop/browsericon.png"),
-	PROGRAMS.NOTES: load("res://assets/Desktop/defaultfoldericon.png")
+	PROGRAMS.BROWSER: load("res://assets/Desktop/icefoxicon.png"),
+	PROGRAMS.NOTES: load("res://assets/Desktop/notepadicon.png"),
+	PROGRAMS.INLOOK: load("res://assets/Desktop/inlookicon.png"),
+	PROGRAMS.SENTENCE: load("res://assets/Desktop/sentenceicon.png"),
+	PROGRAMS.FAIL: load("res://assets/Desktop/failicon.png")
 }
 
 var title_for_program = {
 	PROGRAMS.FILES: "Files",
-	PROGRAMS.BROWSER: "Vertex",
-	PROGRAMS.NOTES: "Notes"
+	PROGRAMS.BROWSER: "IceFox",
+	PROGRAMS.NOTES: "Notes",
+	PROGRAMS.INLOOK: "Macrohard Inlook",
+	PROGRAMS.SENTENCE: "Macrohard Sentence",
+	PROGRAMS.FAIL: "Macrohard Fail",
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -39,6 +49,10 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	window.icon = icon_for_program[program]
 	window.title = title_for_program[program]
 	window.position = _calculate_random_pos_near_center(window.size)
+	
+	match program:
+		PROGRAMS.NOTES:
+			window.set_content(notepad_scene.instantiate())
 
 
 func _calculate_random_pos_near_center(window_size :Vector2) -> Vector2:

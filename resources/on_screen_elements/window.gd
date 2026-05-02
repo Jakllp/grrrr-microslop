@@ -4,7 +4,22 @@ extends Control
 @onready var icon_rect = $MainDivision/TopBar/Icon
 @onready var title_label = $MainDivision/TopBar/Title
 
-var content :Control
+#var content :Control
+@onready var content_container = $MainDivision/ContentContainer
+
+func set_content(new_content: Control) -> void:
+	for child in content_container.get_children():
+		child.queue_free()
+
+	content_container.add_child(new_content)
+
+	new_content.set_anchors_preset(Control.PRESET_FULL_RECT)
+	new_content.offset_left = 0
+	new_content.offset_top = 0
+	new_content.offset_right = 0
+	new_content.offset_bottom = 0
+	print(new_content.size)
+	
 var title = "WindowTitle" :
 	set(value):
 		title_label.text = value
