@@ -20,18 +20,21 @@ func set_content(new_content: Control) -> void:
 	new_content.offset_bottom = 0
 	print(new_content.size)
 	
+var program :DesktopManager.PROGRAMS
+
+signal on_close(program :DesktopManager.PROGRAMS)
+
+var content :Control
 var title = "WindowTitle" :
 	set(value):
 		title_label.text = value
 var icon :Texture2D :
 	set(value):
 		icon_rect.texture = value
-	
 
 var hue := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("Hello")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,5 +47,5 @@ func _process(delta: float) -> void:
 	$MainDivision/TopBar.add_theme_color_override("bg_color", curcol)
 
 func _on_close_button_pressed() -> void:
-	# TODO tell desktop I am gone
+	on_close.emit(program)
 	queue_free()
