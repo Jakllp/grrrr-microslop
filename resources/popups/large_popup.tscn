@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://ctbnc3h2gv0d5"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_dgvh0"]
-[ext_resource type="VideoStream" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
+[ext_resource type="VideoStream" uid="uid://cglitghyxukur" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
+[ext_resource type="AudioStream" uid="uid://ct00uqyldl0mu" path="res://assets/sounds/tralalero-tralala-meme.mp3" id="3_ubk0p"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 z_index = -1
 offset_right = 1408.0
 offset_bottom = 704.0
 script = ExtResource("1_dgvh0")
-slop_plus = 3
-slop_minus = 18
+slop_minus = 3
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1062297582]
 layout_mode = 1
@@ -75,6 +75,10 @@ text = "None of your information will be kept private and we will sell them to a
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1862954081]
+stream = ExtResource("3_ubk0p")
+volume_db = -10.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

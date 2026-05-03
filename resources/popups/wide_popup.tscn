@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_g6v46"]
 [ext_resource type="VideoStream" uid="uid://bsnfjvs8fudyn" path="res://assets/images/ai-pigeon-benjammins.ogv" id="2_vo5ua"]
+[ext_resource type="AudioStream" uid="uid://ng2puurtxh6a" path="res://assets/sounds/vine-boom.mp3" id="3_rf84y"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 z_index = -1
 offset_right = 1344.0
 offset_bottom = 320.0
 script = ExtResource("1_g6v46")
-slop_minus = 16
+slop_minus = 3
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1059903123]
 layout_mode = 1
@@ -58,6 +59,10 @@ offset_bottom = 248.0
 text = "Intested? You are only one click away from sending all your personal data so the AI model can that will take over your life!"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=712720013]
+stream = ExtResource("3_rf84y")
+volume_db = -10.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]
