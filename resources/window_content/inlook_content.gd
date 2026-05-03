@@ -79,7 +79,7 @@ func open_email(email, button):
 			attachments_container.add_child(btn)
 	
 	
-	if email["task"] != null:
+	if email.has("task") and email["task"] != null:
 		var btn := Button.new()
 		var task = email["task"]
 		btn.text = "Check completion!"
