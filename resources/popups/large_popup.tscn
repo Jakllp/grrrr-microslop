@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://ctbnc3h2gv0d5"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_dgvh0"]
+[ext_resource type="VideoStream" uid="uid://b7d45swfehrl" path="res://assets/images/orange-cat-cat.ogv" id="2_patki"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
+z_index = -1
 offset_right = 1472.0
 offset_bottom = 768.0
 script = ExtResource("1_dgvh0")
 slop_plus = 3
 slop_minus = 18
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1062297582]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_patki")
+autoplay = true
+expand = true
+loop = true
 
 [node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
 layout_mode = 0

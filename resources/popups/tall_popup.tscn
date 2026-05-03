@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://cjl4lp1x0ovoj"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_0v2sl"]
+[ext_resource type="VideoStream" uid="uid://ck67uny562de4" path="res://assets/images/happy-cat.ogv" id="2_jntw1"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
+self_modulate = Color(1, 0.25882354, 1, 1)
+z_index = -1
 offset_right = 576.0
 offset_bottom = 704.0
 script = ExtResource("1_0v2sl")
 slop_minus = 10
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=539265042]
+modulate = Color(0.50534403, 0.5053441, 0.50534403, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_jntw1")
+autoplay = true
+expand = true
+loop = true
 
 [node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
 layout_mode = 0
@@ -26,11 +42,37 @@ text = "Decline"
 
 [node name="Label" type="Label" parent="." unique_id=174068412]
 layout_mode = 0
-offset_left = 254.0
-offset_top = 156.0
-offset_right = 306.0
-offset_bottom = 179.0
-text = "Tall Ad"
+offset_left = 176.0
+offset_top = 144.0
+offset_right = 400.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 16
+text = "Are you interested in the future of storage?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=419609151]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 288.0
+offset_right = 400.0
+offset_bottom = 337.0
+text = "TwoDrive has incorporated AI sorting"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=1954054464]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 528.0
+offset_right = 448.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 8
+text = "Once the user signs up you'll be locked in for a 5 year contract"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

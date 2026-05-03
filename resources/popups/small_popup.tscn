@@ -1,12 +1,26 @@
 [gd_scene format=3 uid="uid://cmyqtxg3jwb5y"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_74hly"]
+[ext_resource type="VideoStream" uid="uid://cfe1r4uoi005q" path="res://assets/images/Mandelbrot_sequence_new.ogv" id="2_8npvh"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
+z_index = -1
 offset_right = 448.0
 offset_bottom = 256.0
 script = ExtResource("1_74hly")
-slop_minus = 28
+slop_minus = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1820579610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_8npvh")
+autoplay = true
+expand = true
+loop = true
 
 [node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
 layout_mode = 0

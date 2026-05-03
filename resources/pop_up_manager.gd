@@ -64,6 +64,7 @@ func open_ad():
 	var open_popup = ad_for_type.get(randi() % ad_for_type.size()).instantiate()
 	$"../DesktopUI/PopUps".add_child(open_popup)
 	open_popup.position = _calculate_random_pos_near_center(open_popup.size)
+	open_popup.get_node("VideoStreamPlayer").modulate = Color(randf(), randf(), randf())
 	
 func _calculate_random_pos_near_center(window_size: Vector2) -> Vector2:
 	var viewport_size = get_viewport_rect().size
