@@ -54,6 +54,9 @@ func _process(delta: float) -> void:
 	if toggle_move:
 		global_position = last_window_pos + (get_viewport().get_mouse_position() - last_mouse_pos)
 
+func set_click_capture(state :bool) -> void:
+	$ClickCapturer.visible = state
+
 func _on_close_button_pressed() -> void:
 	on_close.emit(program)
 	queue_free()
@@ -64,3 +67,8 @@ func _on_top_bar_gui_input(event: InputEvent) -> void:
 		toggle_move = event.pressed
 		last_mouse_pos = get_viewport().get_mouse_position()
 		last_window_pos = global_position
+
+
+func _on_click_capturer_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		GameData.desktop_manager.push_to_front(program)
