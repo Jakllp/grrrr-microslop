@@ -47,8 +47,8 @@ func _process(delta: float) -> void:
 	if hue > 1.0:
 		hue -= 1.0
 
-	var curcol = Color.from_hsv(hue, 1.0, 1.0)
-	$MainDivision/TopBar.add_theme_color_override("bg_color", curcol)
+	var cur_modul = $MainDivision/TopBar.modulate
+	$MainDivision/TopBar.modulate = Color.from_hsv(hue, cur_modul.s, cur_modul.v, cur_modul.a)
 	
 	# Do window movement
 	if toggle_move:

@@ -18,9 +18,12 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb2bu"]
-bg_color = Color(0.61274225, 0.5003895, 1, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_lb2bu"]
+font_color = Color(0.2370227, 0.23702267, 0.23702267, 1)
 
 [node name="Window" type="PanelContainer" unique_id=1669938183]
 offset_right = 1200.0
@@ -33,6 +36,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="TopBar" type="Panel" parent="MainDivision" unique_id=299357176]
+modulate = Color(0.49019608, 1, 1, 1)
 clip_children = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -64,6 +68,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Window"
+label_settings = SubResource("LabelSettings_lb2bu")
 horizontal_alignment = 1
 
 [node name="CloseButton" type="TextureButton" parent="MainDivision/TopBar" unique_id=1916698630]
