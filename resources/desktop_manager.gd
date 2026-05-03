@@ -7,6 +7,7 @@ var window_scene = preload("res://resources/on_screen_elements/window.tscn")
 var notepad_scene = preload("res://resources/window_content/NotepadApp.tscn")
 var taskbaricon_scene = preload("res://resources/on_screen_elements/task_bar_icon.tscn")
 var inlook_scene = preload("res://resources/window_content/InlookContent.tscn")
+var files_scene = preload("res://resources/window_content/FilesApp.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -81,6 +82,8 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	
 	# Content
 	match program:
+		PROGRAMS.FILES:
+			window.set_content(files_scene.instantiate())
 		PROGRAMS.NOTES:
 			window.set_content(notepad_scene.instantiate())
 		

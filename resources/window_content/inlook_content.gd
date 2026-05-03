@@ -5,21 +5,8 @@ extends Control
 @onready var from_label = $HBoxContainer/EmailReadPanel/VBoxContainer/FromLabel
 @onready var body_label = $HBoxContainer/EmailReadPanel/VBoxContainer/BodyLabel
 @onready var new_mail_sound = $NewMailSound
+@onready var attachments_container = $HBoxContainer/EmailReadPanel/VBoxContainer/AttachmentsContainer
 
-var emails = [
-	{
-		"from": "System Admin",
-		"subject": "Welcome to Inlook",
-		"body": "Your new email client has been installed successfully.",
-		"read": false,
-	},
-	{
-		"from": "Unknown Sender",
-		"subject": "You should not have logged in",
-		"body": "We saw what you opened.",
-		"read": false,
-	}
-]
 	
 func _ready():
 	# listen for new emails (background system)
@@ -36,17 +23,17 @@ func _ready():
 		if index < GameData.inlook_emails.size():
 			var email = GameData.inlook_emails[index]
 
-			subject_label.text = email.subject
-			from_label.text = "From: " + email.from
-			body_label.text = email.body
+			subject_label.text = email["subject"]
+			from_label.text = "From: " + email["from"]
+			body_label.text = email["body"]
 
 func add_email(email, play_sound := true):
 	var button = Button.new()
 
-	if email.read:
-		button.text = email.subject + "\n" + email.from
+	if email["read"]:
+		button.text = email["subject"] + "\n" + email["from"]
 	else:
-		button.text = "● " + email.subject + "\n" + email.from
+		button.text = "● " + email["subject"] + "\n" + email["from"]
 
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	
@@ -64,12 +51,29 @@ func add_email(email, play_sound := true):
 		new_mail_sound.play()
 
 func open_email(email, button):
-	email.read = true
-	button.text = email.subject + "\n" + email.from
+	email["read"] = true
+	button.text = email["subject"] + "\n" + email["from"]
 
-	subject_label.text = email.subject
-	from_label.text = "From: " + email.from
-	body_label.text = email.body
+	subject_label.text = email["subject"]
+	from_label.text = "From: " + email["from"]
+	body_label.text = email["body"]
 
-	# SAVE INDEX
+	for child in attachments_container.get_children():
+		child.queue_free()
+
+	if !email.get("attachments").is_empty():
+		for file in email["attachments"]:
+			var btn := Button.new()
+			btn.text = file.file_name
+
+			if file.icon:
+				btn.icon = file.icon
+
+			btn.pressed.connect(func():
+				GameData.save_file(file)
+				print("saved from click: ", file.file_name)
+			)
+
+			attachments_container.add_child(btn)
+
 	GameData.inlook_last_opened_index = GameData.inlook_emails.find(email)

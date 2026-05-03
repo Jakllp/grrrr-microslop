@@ -1,10 +1,22 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://ca57p2mhf5nhs"]
 
+[ext_resource type="Script" uid="uid://86evqoi2ke2l" path="res://files/FileData.gd" id="1_hoxtx"]
 [ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_vgsc7"]
+[ext_resource type="Script" uid="uid://begbuca1njjxi" path="res://resources/tasks/sentence_task.gd" id="2_v1f51"]
+
+[sub_resource type="Resource" id="Resource_ihufj"]
+script = ExtResource("1_hoxtx")
+metadata/_custom_type_script = "uid://86evqoi2ke2l"
+
+[sub_resource type="Resource" id="Resource_hoxtx"]
+script = ExtResource("2_v1f51")
+attachment = SubResource("Resource_ihufj")
+metadata/_custom_type_script = "uid://begbuca1njjxi"
 
 [resource]
 script = ExtResource("1_vgsc7")
 task_subject = "Hello"
 task_sender = "Taskmaster"
 task_content = "Do shit!"
+task_goal = SubResource("Resource_hoxtx")
 metadata/_custom_type_script = "uid://bbwh8xldva4de"

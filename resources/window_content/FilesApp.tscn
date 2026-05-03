@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://blqytt08k731s"]
+
+[ext_resource type="Script" uid="uid://cnm34ojvx4fot" path="res://resources/window_content/files_app.gd" id="1_c672l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c672l"]
+bg_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="FilesApp" type="Panel" unique_id=1554497081]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c672l")
+script = ExtResource("1_c672l")
+
+[node name="FilesList" type="GridContainer" parent="." unique_id=163054443]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FileTitleLabel" type="Label" parent="." unique_id=992947664]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FileContentsLabel" type="RichTextLabel" parent="." unique_id=944364991]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
