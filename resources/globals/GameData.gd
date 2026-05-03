@@ -1,6 +1,7 @@
 extends Node
 
 var desktop_manager :DesktopManager
+var popup_manager :PopupManager
 
 var inlook_emails = []
 var inlook_has_started := false
