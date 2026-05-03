@@ -52,7 +52,9 @@ func _process(delta: float) -> void:
 	
 	# Do window movement
 	if toggle_move:
-		global_position = last_window_pos + (get_viewport().get_mouse_position() - last_mouse_pos)
+		var quartersize = size/4
+		global_position.x = clamp(last_window_pos.x + (get_viewport().get_mouse_position().x - last_mouse_pos.x), 0 - quartersize.x, 1920 - quartersize.x)
+		global_position.y = clamp(last_window_pos.y + (get_viewport().get_mouse_position().y - last_mouse_pos.y), 0, 1080 - quartersize.y)
 
 func set_click_capture(state :bool) -> void:
 	$ClickCapturer.visible = state
