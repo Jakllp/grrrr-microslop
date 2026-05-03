@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cjl4lp1x0ovoj"]
+
+[ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_0v2sl"]
+
+[node name="Panel" type="Panel" unique_id=696227408]
+offset_right = 576.0
+offset_bottom = 704.0
+script = ExtResource("1_0v2sl")
+slop_minus = 10
+
+[node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 600.0
+offset_right = 200.0
+offset_bottom = 639.0
+text = "Accept"
+
+[node name="DeclineButton" type="Button" parent="." unique_id=367148624]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 600.0
+offset_right = 456.0
+offset_bottom = 639.0
+text = "Decline"
+
+[node name="Label" type="Label" parent="." unique_id=174068412]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 156.0
+offset_right = 306.0
+offset_bottom = 179.0
+text = "Tall Ad"
+
+[connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

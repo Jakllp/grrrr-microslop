@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ctbnc3h2gv0d5"]
+
+[ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_dgvh0"]
+
+[node name="Panel" type="Panel" unique_id=696227408]
+offset_right = 1472.0
+offset_bottom = 768.0
+script = ExtResource("1_dgvh0")
+slop_plus = 3
+slop_minus = 18
+
+[node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 448.0
+offset_right = 1280.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 71
+text = "Accept"
+
+[node name="DeclineButton" type="Button" parent="." unique_id=367148624]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 384.0
+offset_bottom = 575.0
+theme_override_font_sizes/font_size = 29
+text = "Decline"
+
+[node name="Label" type="Label" parent="." unique_id=174068412]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 128.0
+offset_right = 946.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 44
+text = "Large Ad Sample"
+
+[connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]
