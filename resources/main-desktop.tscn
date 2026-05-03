@@ -197,3 +197,16 @@ texture_hover = ExtResource("23_p2to3")
 script = ExtResource("8_vodj4")
 program = 5
 metadata/_custom_type_script = "uid://c3pjph0yxs668"
+
+[node name="Windows" type="Control" parent="DesktopUI" unique_id=759744213]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopUps" type="Control" parent="DesktopUI" unique_id=1059659887]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
