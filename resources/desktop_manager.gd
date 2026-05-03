@@ -144,13 +144,15 @@ func push_to_front(program :PROGRAMS) -> void:
 			prog[0].z_index = prog[1]
 
 func open_sentence_file(file_data: FileData) -> void:
+	var content := get_saved_file_content(file_data)
+
 	# If Sentence is already open, add file as new tab
 	if open_windows.has(PROGRAMS.SENTENCE):
 		var sentence_window = open_windows.get(PROGRAMS.SENTENCE)[0]
 		var sentence_content = sentence_window.find_child("SentenceContent", true, false)
 
 		if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
-			sentence_content.add_sentence_tab(file_data.file_name, file_data.file_content)
+			sentence_content.add_sentence_tab(file_data.file_name, content, file_data)
 
 		push_to_front(PROGRAMS.SENTENCE)
 		return
@@ -165,4 +167,12 @@ func open_sentence_file(file_data: FileData) -> void:
 	var sentence_content = sentence_window.find_child("SentenceContent", true, false)
 
 	if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
-		sentence_content.add_sentence_tab(file_data.file_name, file_data.file_content)
+		sentence_content.add_sentence_tab(file_data.file_name, content, file_data)
+
+func get_saved_file_content(file_data: FileData) -> String:
+	var key = file_data.resource_path
+	
+	if GameData.file_contents.has(key):
+		return GameData.file_contents[key]
+	
+	return file_data.file_content
