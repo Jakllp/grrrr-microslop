@@ -30,6 +30,7 @@ script = ExtResource("1_pcso3")
 
 [node name="MainDivision" type="VBoxContainer" parent="." unique_id=994725332]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="TopBar" type="Panel" parent="MainDivision" unique_id=299357176]
 clip_children = 2

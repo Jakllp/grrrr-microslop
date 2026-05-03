@@ -6,6 +6,7 @@ extends Node2D
 var window_scene = preload("res://resources/on_screen_elements/window.tscn")
 var notepad_scene = preload("res://resources/window_content/NotepadApp.tscn")
 var taskbaricon_scene = preload("res://resources/on_screen_elements/task_bar_icon.tscn")
+var inlook_scene = preload("res://resources/window_content/InlookContent.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -41,6 +42,9 @@ var open_windows = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameData.desktop_manager = self
+	
+	GameData.start_inlook_system()
+	
 	var buttons = $"../DesktopUI/AppIcons".get_children()
 	for butt :DesktopIcon in buttons:
 		butt.pressed.connect(_on_desktop_icon_clicked.bind(butt))
@@ -79,6 +83,9 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	match program:
 		PROGRAMS.NOTES:
 			window.set_content(notepad_scene.instantiate())
+		
+		PROGRAMS.INLOOK:
+			window.set_content(inlook_scene.instantiate())
 
 	window.program = program
 	window.on_close.connect(_close_window)

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ckacfuamitqeb"]
+
+[ext_resource type="Script" uid="uid://dx7wabovpf1cd" path="res://resources/window_content/inlook_content.gd" id="1_mc81p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc81p"]
+bg_color = Color(0.80784315, 0.40784314, 0.13725491, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="InlookContent" type="Panel" unique_id=1559267655]
+clip_children = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -720.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc81p")
+script = ExtResource("1_mc81p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1441404622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="EmailListPanel" type="PanelContainer" parent="HBoxContainer" unique_id=295546389]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/EmailListPanel" unique_id=1104526544]
+layout_mode = 2
+
+[node name="EmailReadPanel" type="PanelContainer" parent="HBoxContainer" unique_id=1278566776]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/EmailReadPanel" unique_id=2084833745]
+layout_mode = 2
+
+[node name="SubjectLabel" type="Label" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=342759173]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FromLabel" type="Label" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=1947526308]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BodyLabel" type="Label" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=207191240]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewMailSound" type="AudioStreamPlayer2D" parent="." unique_id=571339639]

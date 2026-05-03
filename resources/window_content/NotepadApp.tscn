@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d3lbnanvgk7px" path="res://resources/window_content/notepad_app.gd" id="1_lkxr6"]
 
-[node name="NotepadApp" type="Control" unique_id=160535637]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkxr6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="NotepadApp" type="Panel" unique_id=850329491]
+clip_children = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkxr6")
 script = ExtResource("1_lkxr6")
 
 [node name="TextEdit" type="TextEdit" parent="." unique_id=603951327]
@@ -20,7 +26,5 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -4.0
-offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
