@@ -141,13 +141,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PopUps" type="Control" parent="DesktopUI" unique_id=1059659887]
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TaskBar" type="ColorRect" parent="DesktopUI" unique_id=1348432001]
 z_index = 50
 anchors_preset = 2
@@ -211,3 +204,10 @@ theme_override_font_sizes/font_size = 15
 text = "02.05.2026"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PopUps" type="Control" parent="DesktopUI" unique_id=1059659887]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
