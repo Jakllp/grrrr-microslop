@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctbnc3h2gv0d5"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_dgvh0"]
-[ext_resource type="VideoStream" uid="uid://cglitghyxukur" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
+[ext_resource type="VideoStream" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 z_index = -1
