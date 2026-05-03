@@ -71,9 +71,29 @@ func open_email(email, button):
 
 			btn.pressed.connect(func():
 				GameData.save_file(file)
+				btn.text = "Saved!"
+				btn.disabled = true
 				print("saved from click: ", file.file_name)
 			)
 
 			attachments_container.add_child(btn)
+	
+	
+	if email["task"] != null:
+		var btn := Button.new()
+		var task = email["task"]
+		btn.text = "Check completion!"
+
+		btn.pressed.connect(func():
+			var check = TaskManager.check_task(task)
+			
+			if check:
+				btn.text = "Completed!"
+				btn.disabled = true
+			else:
+				btn.text = "Check again!"
+		)
+
+		attachments_container.add_child(btn)
 
 	GameData.inlook_last_opened_index = GameData.inlook_emails.find(email)

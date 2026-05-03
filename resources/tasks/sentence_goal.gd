@@ -1,6 +1,5 @@
-class_name SentenceTask
+class_name SentenceGoal
 extends TaskGoal
 
-@export var filename :String
 @export var content_contains :Array[String]
 @export var attachment :FileData

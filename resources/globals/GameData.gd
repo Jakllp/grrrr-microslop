@@ -30,19 +30,21 @@ func start_inlook_system():
 		"subject": "Welcome to Inlook",
 		"body": "Your new email client has been installed successfully.",
 		"read": false,
-		"attachments": [load("res://files/PayMeBack.tres")]
-	})
-
-	await get_tree().create_timer(3.0).timeout
-	add_inlook_email({
-		"from": "Unknown Sender",
-		"subject": "You should not have logged in",
-		"body": "We saw what you opened.",
-		"read": false,
 		"attachments": []
 	})
 	
 signal inlook_new_email(email)
+
+func add_task(task :Task):
+	if task.task_goal is SentenceGoal:
+		add_inlook_email({
+			"from": task.task_sender,
+			"subject": task.task_subject,
+			"body": task.task_content,
+			"read": false,
+			"attachments": [task.task_goal.attachment],
+			"task": task
+		})
 
 func add_inlook_email(email):
 	inlook_emails.append(email)
