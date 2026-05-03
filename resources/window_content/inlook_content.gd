@@ -33,7 +33,7 @@ func add_email(email, play_sound := true):
 	if email["read"]:
 		button.text = email["subject"] + "\n" + email["from"]
 	else:
-		button.text = "● " + email["subject"] + "\n" + email["from"]
+		button.text = "* " + email["subject"] + "\n" + email["from"]
 
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	
