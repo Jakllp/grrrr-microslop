@@ -33,5 +33,7 @@ func open_file(file_data: FileData):
 	match file_data.program:
 		DesktopManager.PROGRAMS.SENTENCE:
 			GameData.desktop_manager.open_sentence_file(file_data)
+		DesktopManager.PROGRAMS.FAIL:
+			GameData.desktop_manager.open_fail_file(file_data)
 		_:
 			print("No app assigned for this file")
