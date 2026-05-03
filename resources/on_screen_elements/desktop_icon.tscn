@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bkblgtwdul1l7"]
+
+[ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="1_tn1ck"]
+[ext_resource type="Script" uid="uid://c3pjph0yxs668" path="res://resources/on_screen_elements/desktop_icon.gd" id="2_0r702"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nso7l"]
+font_size = 24
+
+[node name="DesktopIcon" type="TextureButton" unique_id=1072188012]
+custom_minimum_size = Vector2(180, 180)
+offset_right = 180.0
+offset_bottom = 180.0
+texture_normal = ExtResource("1_tn1ck")
+stretch_mode = 0
+script = ExtResource("2_0r702")
+
+[node name="Label" type="Label" parent="." unique_id=1872694307]
+layout_mode = 0
+offset_top = 179.99998
+offset_right = 180.0
+offset_bottom = 213.99998
+text = "Text"
+label_settings = SubResource("LabelSettings_nso7l")
+horizontal_alignment = 1

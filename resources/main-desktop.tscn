@@ -5,12 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cg3iu7pnkii44" path="res://assets/Desktop/backgroundwwindows95.png" id="2_a5r2x"]
 [ext_resource type="Script" uid="uid://ctcjwsbr1gglc" path="res://resources/desktop_manager.gd" id="2_bvuyt"]
 [ext_resource type="Script" path="res://resources/pop_up_manager.gd" id="2_wncl7"]
-[ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="3_10mrj"]
 [ext_resource type="Texture2D" uid="uid://cly1siep15e67" path="res://assets/Desktop/flowericon.png" id="3_wncl7"]
 [ext_resource type="Texture2D" uid="uid://bisfsgr4hhtq0" path="res://assets/Desktop/searchicon.png" id="4_2d4c4"]
 [ext_resource type="Texture2D" uid="uid://cvps7y3u17m27" path="res://assets/Desktop/clickedfoldericon.png" id="4_5ru2d"]
 [ext_resource type="Texture2D" uid="uid://bcxk1wxxp6x56" path="res://assets/Desktop/hoverfoldericon.png" id="5_xmugq"]
-[ext_resource type="Script" uid="uid://c3pjph0yxs668" path="res://resources/on_screen_elements/desktop_icon.gd" id="8_vodj4"]
+[ext_resource type="PackedScene" uid="uid://bkblgtwdul1l7" path="res://resources/on_screen_elements/desktop_icon.tscn" id="7_etg6h"]
 [ext_resource type="Texture2D" uid="uid://drpd88ijjib20" path="res://assets/Desktop/notepadicon.png" id="10_aeqsg"]
 [ext_resource type="Texture2D" uid="uid://dtl08q7fke1mi" path="res://assets/Desktop/clickednotepadicon.png" id="11_2d4c4"]
 [ext_resource type="Texture2D" uid="uid://tclrq7aq4jag" path="res://assets/Desktop/icefoxicon.png" id="11_q23uu"]
@@ -75,65 +74,54 @@ texture_hover = ExtResource("4_2d4c4")
 [node name="AppIcons" type="GridContainer" parent="DesktopUI" unique_id=1196231045]
 offset_right = 40.0
 offset_bottom = 64.0
-scale = Vector2(10, 10)
+theme_override_constants/v_separation = 50
 columns = 2
 
-[node name="FolderIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=352988986]
-physics_interpolation_mode = 0
+[node name="Files" parent="DesktopUI/AppIcons" unique_id=1072188012 instance=ExtResource("7_etg6h")]
 layout_mode = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_10mrj")
 texture_pressed = ExtResource("4_5ru2d")
 texture_hover = ExtResource("5_xmugq")
-script = ExtResource("8_vodj4")
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Files"
 
-[node name="BrowserIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1045273901]
-physics_interpolation_mode = 0
+[node name="Browser" parent="DesktopUI/AppIcons" unique_id=2092841960 instance=ExtResource("7_etg6h")]
 layout_mode = 2
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_q23uu")
 texture_pressed = ExtResource("12_c3cld")
 texture_hover = ExtResource("13_5pluv")
-script = ExtResource("8_vodj4")
 program = 1
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Icefox"
 
-[node name="NotesIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1156261416]
+[node name="Notes" parent="DesktopUI/AppIcons" unique_id=364916256 instance=ExtResource("7_etg6h")]
 layout_mode = 2
 texture_normal = ExtResource("10_aeqsg")
 texture_pressed = ExtResource("11_2d4c4")
 texture_hover = ExtResource("12_5fyvv")
-script = ExtResource("8_vodj4")
 program = 2
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Notes"
 
-[node name="InlookIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=31513111]
+[node name="Inlook" parent="DesktopUI/AppIcons" unique_id=2100341188 instance=ExtResource("7_etg6h")]
 layout_mode = 2
 texture_normal = ExtResource("15_c3cld")
 texture_pressed = ExtResource("16_5pluv")
 texture_hover = ExtResource("17_1xfrd")
-script = ExtResource("8_vodj4")
 program = 3
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Inlook"
 
-[node name="SentenceIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=1579281380]
+[node name="Sentence" parent="DesktopUI/AppIcons" unique_id=981362881 instance=ExtResource("7_etg6h")]
 layout_mode = 2
 texture_normal = ExtResource("18_ohk5c")
 texture_pressed = ExtResource("19_wmmqq")
 texture_hover = ExtResource("20_8hqya")
-script = ExtResource("8_vodj4")
 program = 4
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Sentence"
 
-[node name="FailIcon" type="TextureButton" parent="DesktopUI/AppIcons" unique_id=532503475]
+[node name="Fail" parent="DesktopUI/AppIcons" unique_id=557192123 instance=ExtResource("7_etg6h")]
 layout_mode = 2
 texture_normal = ExtResource("21_1wffb")
 texture_pressed = ExtResource("22_4t3og")
 texture_hover = ExtResource("23_p2to3")
-script = ExtResource("8_vodj4")
 program = 5
-metadata/_custom_type_script = "uid://c3pjph0yxs668"
+title = "Fail"
 
 [node name="Windows" type="Control" parent="DesktopUI" unique_id=759744213]
 layout_mode = 3
