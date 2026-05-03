@@ -9,6 +9,8 @@ var inlook_last_opened_index := -1
 
 var saved_files: Array[FileData] = []
 
+var sentence_tabs := []
+
 signal file_saved
 
 var player_name = ""

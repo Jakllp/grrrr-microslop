@@ -8,6 +8,7 @@ var notepad_scene = preload("res://resources/window_content/NotepadApp.tscn")
 var taskbaricon_scene = preload("res://resources/on_screen_elements/task_bar_icon.tscn")
 var inlook_scene = preload("res://resources/window_content/InlookContent.tscn")
 var files_scene = preload("res://resources/window_content/FilesApp.tscn")
+var sentence_scene = preload("res://resources/window_content/SentenceContent.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -58,6 +59,18 @@ func _process(delta: float) -> void:
 func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	var program = butt.program
 	
+	# Special case for Sentence:
+	# If already open, add a new tab instead of opening a new window
+	if program == PROGRAMS.SENTENCE and open_windows.has(program):
+		var sentence_window = open_windows.get(program)[0]
+		var sentence_content = sentence_window.find_child("SentenceContent", true, false)
+		
+		if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
+			sentence_content.add_sentence_tab()
+		
+		push_to_front(program)
+		return
+	
 	# Check if already exists
 	if open_windows.has(program):
 		push_to_front(program)
@@ -74,7 +87,7 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	open_windows.get_or_add(program, [window, open_windows.size() + 1, taskbar_icon])
 	windows_node.add_child(window)
 	
-	#Set variables
+	# Set variables
 	window.z_index = open_windows.get(program)[1]
 	window.icon = icon_for_program[program]
 	window.title = title_for_program[program]
@@ -86,9 +99,10 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 			window.set_content(files_scene.instantiate())
 		PROGRAMS.NOTES:
 			window.set_content(notepad_scene.instantiate())
-		
 		PROGRAMS.INLOOK:
 			window.set_content(inlook_scene.instantiate())
+		PROGRAMS.SENTENCE:
+			window.set_content(sentence_scene.instantiate())
 
 	window.program = program
 	window.on_close.connect(_close_window)
@@ -128,3 +142,27 @@ func push_to_front(program :PROGRAMS) -> void:
 		if prog[1] > previous_z && prog != wanted_prog:
 			prog[1] -= 1
 			prog[0].z_index = prog[1]
+
+func open_sentence_file(file_data: FileData) -> void:
+	# If Sentence is already open, add file as new tab
+	if open_windows.has(PROGRAMS.SENTENCE):
+		var sentence_window = open_windows.get(PROGRAMS.SENTENCE)[0]
+		var sentence_content = sentence_window.find_child("SentenceContent", true, false)
+
+		if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
+			sentence_content.add_sentence_tab(file_data.file_name, file_data.file_content)
+
+		push_to_front(PROGRAMS.SENTENCE)
+		return
+
+	# If Sentence is not open, open it first
+	var fake_button := DesktopIcon.new()
+	fake_button.program = PROGRAMS.SENTENCE
+	_on_desktop_icon_clicked(fake_button)
+
+	# Then add the file tab
+	var sentence_window = open_windows.get(PROGRAMS.SENTENCE)[0]
+	var sentence_content = sentence_window.find_child("SentenceContent", true, false)
+
+	if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
+		sentence_content.add_sentence_tab(file_data.file_name, file_data.file_content)

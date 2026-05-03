@@ -29,6 +29,9 @@ func refresh_files() -> void:
 
 		files_list.add_child(button)
 		
-func open_file(file) -> void:
-	file_title_label.text = file.file_name
-	file_content_label.text = file.file_content
+func open_file(file_data: FileData):
+	match file_data.program:
+		DesktopManager.PROGRAMS.SENTENCE:
+			GameData.desktop_manager.open_sentence_file(file_data)
+		_:
+			print("No app assigned for this file")
