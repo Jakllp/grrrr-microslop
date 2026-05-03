@@ -25,6 +25,9 @@ func check_time():
 	var total_minutes = int(current_time_minutes)
 	var hours_passed = total_minutes / 60
 	var current_hour = start_hour + hours_passed
+	var current_minutes = total_minutes % 60
+	
+	TaskManager.check_trigger_task(get_time_string())
 	
 	if current_hour >= end_hour:
 		game_over()

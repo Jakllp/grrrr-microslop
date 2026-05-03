@@ -13,6 +13,8 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(cursor.get_frame_texture("beam", 0), Input.CURSOR_IBEAM)
 	Input.set_custom_mouse_cursor(cursor.get_frame_texture("pointer", 0), Input.CURSOR_POINTING_HAND)
 
+func _process(delta :float) -> void:
+	advance_frame(delta)
 
 func advance_frame(delta :float) -> void:
 	time_since_last += delta
