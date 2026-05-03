@@ -7,6 +7,10 @@ extends Control
 #var content :Control
 @onready var content_container = $MainDivision/ContentContainer
 
+var toggle_move := false
+var last_mouse_pos :Vector2
+var last_window_pos :Vector2
+
 func set_content(new_content: Control) -> void:
 	for child in content_container.get_children():
 		child.queue_free()
@@ -32,6 +36,7 @@ var icon :Texture2D :
 		icon_rect.texture = value
 
 var hue := 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -44,7 +49,18 @@ func _process(delta: float) -> void:
 
 	var curcol = Color.from_hsv(hue, 1.0, 1.0)
 	$MainDivision/TopBar.add_theme_color_override("bg_color", curcol)
+	
+	# Do window movement
+	if toggle_move:
+		global_position = last_window_pos + (get_viewport().get_mouse_position() - last_mouse_pos)
 
 func _on_close_button_pressed() -> void:
 	on_close.emit(program)
 	queue_free()
+
+
+func _on_top_bar_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		toggle_move = event.pressed
+		last_mouse_pos = get_viewport().get_mouse_position()
+		last_window_pos = global_position
