@@ -128,6 +128,9 @@ func _calculate_random_pos_near_center(window_size :Vector2) -> Vector2:
 	return Vector2(x, y)
 
 func push_to_front(program :PROGRAMS) -> void:
+	if windows_node.get_child(open_windows.size() - 1) == open_windows.get(program)[0]:
+		return
+	
 	var wanted_prog = open_windows.get(program)
 	var new_z = open_windows.size()
 	var previous_z = wanted_prog[1]
