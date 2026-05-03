@@ -30,7 +30,7 @@ func start_inlook_system():
 	add_inlook_email({
 		"from": "Seb",
 		"subject": "Last quarters data",
-		"body": "Y've attached the data.",
+		"body": "I've attached the data.",
 		"read": true,
 		"attachments": [load("res://files/test_spreadsheet.tres")]
 	})
@@ -47,7 +47,7 @@ func start_inlook_system():
 signal inlook_new_email(email)
 
 func add_task(task :Task):
-	if task.task_goal is SentenceGoal:
+	if task.task_goal is SentenceGoal or task.task_goal is FailGoal:
 		add_inlook_email({
 			"from": task.task_sender,
 			"subject": task.task_subject,

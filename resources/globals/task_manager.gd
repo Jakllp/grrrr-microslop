@@ -1,7 +1,8 @@
 extends Node
 
 var tasks = {
-	"08:04": load("res://resources/tasks/first_task.tres")
+	"08:04": load("res://resources/tasks/first_task.tres"),
+	"08:05": load("res://resources/tasks/second_task.tres")
 }
 
 var tasks_to_evaluate :Array[Task] = []
@@ -17,11 +18,28 @@ func check_task(task :Task) -> bool:
 	
 	if task.task_goal is SentenceGoal:
 		var sentgoal :SentenceGoal = task.task_goal
-		var file = _find_file_for_task(sentgoal.attachment.file_name)
+		var attachm = sentgoal.attachment
+		var file_data = _find_file_for_task(attachm.file_name)
+		var edited_file_content = GameData.file_contents.get(file_data.resource_path)
 		
-		if file != null and file.file_content != sentgoal.attachment.file_content:
+		if file_data != null and edited_file_content != null and edited_file_content != attachm.file_content:
 			for required in sentgoal.content_contains:
-				if !file.file_content.contains(required):
+				if !edited_file_content.contains(required):
+					successful = false
+					continue
+				else: 
+					successful = true
+	elif task.task_goal is FailGoal:
+		var failgoal :FailGoal = task.task_goal
+		var attachm = failgoal.attachment
+		var file_data = _find_file_for_task(attachm.file_name)
+		var edited_file_content = GameData.file_contents.get(file_data.resource_path)
+		var cells :Dictionary = edited_file_content.get(0).get("cells")
+		
+		print("Here")
+		if file_data != null and edited_file_content != attachm.sheets:
+			for required in failgoal.content_contains:
+				if !cells.values().has(required):
 					successful = false
 					continue
 				else: 

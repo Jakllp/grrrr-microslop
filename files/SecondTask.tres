@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpreadsheetData" format=3 uid="uid://b3n26j3p4mmn8"]
+
+[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="1_0jvtl"]
+[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="2_36gcv"]
+
+[resource]
+script = ExtResource("2_36gcv")
+sheets = Array[Dictionary]([{
+"cells": {
+"A1": "Calc",
+"A2": "4+4",
+"A3": "7*7",
+"B1": "Result"
+},
+"title": "Calculations"
+}])
+file_name = "Calculations.fai"
+icon = ExtResource("1_0jvtl")
+program = 5
+metadata/_custom_type_script = "uid://caxlxb01b5wrf"

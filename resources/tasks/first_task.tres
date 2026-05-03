@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://ca57p2mhf5nhs"]
 
-[ext_resource type="Script" uid="uid://86evqoi2ke2l" path="res://files/FileData.gd" id="1_6vgqm"]
 [ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="2_2hjlx"]
 [ext_resource type="Resource" uid="uid://4s3ak5wr80t1" path="res://files/FirstTask.tres" id="3_nhlym"]
 [ext_resource type="Script" uid="uid://begbuca1njjxi" path="res://resources/tasks/sentence_goal.gd" id="4_m6q4k"]
 
 [sub_resource type="Resource" id="Resource_hoxtx"]
 script = ExtResource("4_m6q4k")
+content_contains = Array[String](["10h"])
 attachment = ExtResource("3_nhlym")
 metadata/_custom_type_script = "uid://begbuca1njjxi"
 

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://5s14cho0jhui"]
+
+[ext_resource type="Resource" uid="uid://b3n26j3p4mmn8" path="res://files/SecondTask.tres" id="2_sn3us"]
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="2_uiynj"]
+[ext_resource type="Script" uid="uid://bw2xu6ygyobfx" path="res://resources/tasks/fail_goal.gd" id="5_nrrg1"]
+
+[sub_resource type="Resource" id="Resource_fw2hh"]
+script = ExtResource("5_nrrg1")
+content_contains = Array[String](["8", "49"])
+attachment = ExtResource("2_sn3us")
+metadata/_custom_type_script = "uid://bw2xu6ygyobfx"
+
+[resource]
+script = ExtResource("2_uiynj")
+task_subject = "Some help?"
+task_sender = "Nice Colleague"
+task_content = "Heyyy, can you please help me with this spreadsheet? I am kinda lost!"
+task_goal = SubResource("Resource_fw2hh")
+metadata/_custom_type_script = "uid://bbwh8xldva4de"
