@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://shwf1o0bmm47" path="res://resources/end_screens/game_over.gd" id="1_il115"]
 [ext_resource type="Texture2D" uid="uid://cdclvlf6f01g2" path="res://assets/images/96302.webp" id="2_7hixy"]
 
-[node name="GameOverBad" type="Control" unique_id=142773003]
+[node name="GameOverBad" type="Control" unique_id=142773003 node_paths=PackedStringArray("slop_bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_il115")
+slop_bar = NodePath("TextureRect/ProgressBar")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=935655202]
 layout_mode = 0

@@ -30,10 +30,15 @@ func check_time():
 	TaskManager.check_trigger_task(get_time_string())
 	
 	if current_hour >= end_hour:
-		game_over()
+		if TaskManager.check_end_of_day():
+			good_ending()
+		else:
+			bad_ending()
 
-func game_over():
+func good_ending():
 	get_tree().change_scene_to_file("res://resources/end_screens/game-over-good.tscn")
+func bad_ending():
+	get_tree().change_scene_to_file("res://resources/end_screens/game-over-bad.tscn")
 
 func get_time_string():
 	var total_minutes = int(current_time_minutes)

@@ -11,6 +11,7 @@ var saved_files: Array[FileData] = []
 signal file_saved
 
 var player_name = ""
+var slopmeter = 5
 var notepad_text := ""
 
 #inlook emails

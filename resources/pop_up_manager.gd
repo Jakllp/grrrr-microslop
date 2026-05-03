@@ -1,5 +1,5 @@
 extends Node2D
-var slopmeter = 5
+
 var roll_counter = 0
 var time_passed: float = 0.0
 var is_halted: bool = false
@@ -20,13 +20,13 @@ func _process(delta: float):
 func _slop_meter():
 	roll_counter += 1
 	var roll_dice = randi_range(1, 100)
-	if roll_dice <= slopmeter: 
+	if roll_dice <= GameData.slopmeter: 
 		# TODO
 		print("ad")
 	else: 
 		pass
 	if roll_counter >= 5:
-		slopmeter += 1
+		GameData.slopmeter += 1
 		roll_counter = 0
 
 func halt_meter():
@@ -38,10 +38,10 @@ func halt_meter():
 	is_halted = false
 
 func progress_meter():
-	slopmeter += 5
+	GameData.slopmeter += 5
 
 func check_end_condition():
-	if slopmeter > 50:
+	if GameData.slopmeter > 50:
 		get_tree().change_scene_to_file("res://resources/end_screens/game-over-bad.tscn")
 	else:
 		get_tree().change_scene_to_file("res://resources/end_screens/game-over-good.tscn")
