@@ -68,6 +68,7 @@ func add_sheet(name := ""):
 			cell.name = get_cell_coord(r, c)
 			cell.custom_minimum_size = Vector2(90, 28)
 			cell.text_changed.connect(save_sheets)
+			cell.gui_input.connect(_on_cell_gui_input.bind(cell, r, c))
 			grid.add_child(cell)
 
 	scroll.add_child(grid)
@@ -152,3 +153,25 @@ func clear_sheets():
 	for child in tab_container.get_children():
 		tab_container.remove_child(child)
 		child.queue_free()
+
+func _on_cell_gui_input(event: InputEvent, cell: LineEdit, row: int, column: int):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
+			get_viewport().set_input_as_handled()
+			move_to_cell(row + 1, column)
+
+func move_to_cell(row: int, column: int):
+	if row < 0 or row >= rows:
+		return
+	
+	if column < 0 or column >= columns:
+		return
+
+	var current_scroll = tab_container.get_child(tab_container.current_tab)
+	var grid = current_scroll.get_child(0)
+	var coord = get_cell_coord(row, column)
+
+	for child in grid.get_children():
+		if child is LineEdit and child.name == coord:
+			child.grab_focus()
+			return

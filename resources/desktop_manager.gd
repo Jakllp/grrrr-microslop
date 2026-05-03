@@ -10,6 +10,7 @@ var inlook_scene = preload("res://resources/window_content/InlookContent.tscn")
 var files_scene = preload("res://resources/window_content/FilesApp.tscn")
 var sentence_scene = preload("res://resources/window_content/SentenceContent.tscn")
 var fail_scene = preload("res://resources/window_content/FailContent.tscn")
+var icefox_scene = preload("res://resources/window_content/IcefoxApp.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -114,6 +115,8 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 			window.set_content(sentence_scene.instantiate())
 		PROGRAMS.FAIL:
 			window.set_content(fail_scene.instantiate())
+		PROGRAMS.BROWSER:
+			window.set_content(icefox_scene.instantiate())
 
 	window.program = program
 	window.on_close.connect(_close_window)

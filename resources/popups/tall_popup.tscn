@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjl4lp1x0ovoj"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_0v2sl"]
-[ext_resource type="VideoStream" uid="uid://b5ahdqxho1w1h" path="res://assets/images/good-morning.ogv" id="2_jntw1"]
+[ext_resource type="VideoStream" path="res://assets/images/good-morning.ogv" id="2_jntw1"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 self_modulate = Color(1, 0.25882354, 1, 1)
