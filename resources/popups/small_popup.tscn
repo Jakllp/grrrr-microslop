@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_74hly"]
 [ext_resource type="VideoStream" uid="uid://cfe1r4uoi005q" path="res://assets/images/Mandelbrot_sequence_new.ogv" id="2_8npvh"]
+[ext_resource type="AudioStream" uid="uid://by0ym03qg5ren" path="res://assets/sounds/buzzing-noise-sound.mp3" id="3_efnch"]
 
-[node name="Panel" type="Panel" unique_id=696227408]
+[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player")]
 z_index = -1
 offset_right = 448.0
 offset_bottom = 256.0
 script = ExtResource("1_74hly")
-slop_minus = 4
+slop_minus = 3
+player = NodePath("AudioStreamPlayer")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1820579610]
 layout_mode = 1
@@ -48,6 +50,10 @@ text = "Hungry? Sell your data to an LLM for food stamps now!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1798205958]
+stream = ExtResource("3_efnch")
+volume_db = -10.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

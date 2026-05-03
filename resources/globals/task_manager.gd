@@ -5,6 +5,9 @@ var tasks = {
 	"09:25": load("res://resources/tasks/second_task.tres")
 }
 
+var SuccessSound :AudioStreamPlayer
+var FailSound :AudioStreamPlayer
+
 var tasks_to_evaluate :Array[Task] = []
 
 func check_trigger_task(time_string :String) -> void:
@@ -49,6 +52,10 @@ func check_task(task :Task) -> bool:
 	
 	if successful:
 		tasks_to_evaluate.erase(task)
+		SuccessSound.play()
+	else:
+		FailSound.play()
+		
 	return successful
 
 func _find_file_for_task(name :String) -> FileData:
