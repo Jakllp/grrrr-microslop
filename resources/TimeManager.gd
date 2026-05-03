@@ -7,7 +7,7 @@ var start_hour = 8
 var end_hour = 16
 
 var current_time_minutes = 0.0
-var real_seconds_per_game_hour = 60.0
+var real_seconds_per_game_hour = 30.0
 
 func _ready():
 	current_time_minutes = 0.0

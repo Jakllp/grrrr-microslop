@@ -1,8 +1,8 @@
 extends Node
 
 var tasks = {
-	"08:04": load("res://resources/tasks/first_task.tres"),
-	"08:05": load("res://resources/tasks/second_task.tres")
+	"08:30": load("res://resources/tasks/first_task.tres"),
+	"09:25": load("res://resources/tasks/second_task.tres")
 }
 
 var tasks_to_evaluate :Array[Task] = []
