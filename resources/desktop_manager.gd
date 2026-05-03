@@ -60,7 +60,8 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	var taskbar_icon = taskbaricon_scene.instantiate()
 	
 	open_windows.get_or_add(program, [window, open_windows.size() + 1, taskbar_icon])
-	$"../DesktopUI".add_child(window)
+	$"../DesktopUI/Windows".add_child(window)
+	
 	#Set variables
 	window.z_index = open_windows.get(program)[1]
 	window.icon = icon_for_program[program]
@@ -101,6 +102,7 @@ func _push_to_front(program :PROGRAMS) -> void:
 	var previous_z = wanted_prog[1]
 	wanted_prog[0].z_index = new_z
 	wanted_prog[1] = new_z
+	$"../DesktopUI/Windows".move_child(wanted_prog[0], new_z-1)
 	for prog in open_windows.values():
 		if prog[1] > previous_z && prog != wanted_prog:
 			prog[1] -= 1
