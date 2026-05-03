@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2oyvnom3vi4x"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_g6v46"]
-[ext_resource type="VideoStream" uid="uid://coy7tgm2ifppn" path="res://assets/images/nyan-cat.ogv" id="2_vo5ua"]
+[ext_resource type="VideoStream" uid="uid://bsnfjvs8fudyn" path="res://assets/images/ai-pigeon-benjammins.ogv" id="2_vo5ua"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 z_index = -1
@@ -40,11 +40,24 @@ text = "Decline"
 
 [node name="Label" type="Label" parent="." unique_id=174068412]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 155.0
-offset_right = 313.0
-offset_bottom = 178.0
-text = "Wide Ad"
+offset_left = 112.0
+offset_top = 40.0
+offset_right = 512.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 29
+text = "This AI will do all your tasks!"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1135081611]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 120.0
+offset_right = 720.0
+offset_bottom = 248.0
+text = "Intested? You are only one click away from sending all your personal data so the AI model can that will take over your life!"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

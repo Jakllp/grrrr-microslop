@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjl4lp1x0ovoj"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_0v2sl"]
-[ext_resource type="VideoStream" uid="uid://ck67uny562de4" path="res://assets/images/happy-cat.ogv" id="2_jntw1"]
+[ext_resource type="VideoStream" uid="uid://b5ahdqxho1w1h" path="res://assets/images/good-morning.ogv" id="2_jntw1"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 self_modulate = Color(1, 0.25882354, 1, 1)
@@ -42,12 +42,12 @@ text = "Decline"
 
 [node name="Label" type="Label" parent="." unique_id=174068412]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 144.0
-offset_right = 400.0
-offset_bottom = 193.0
-theme_override_font_sizes/font_size = 16
-text = "Are you interested in the future of storage?"
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 448.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 26
+text = "Are you interested in the future of file storage?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -58,7 +58,7 @@ offset_left = 176.0
 offset_top = 288.0
 offset_right = 400.0
 offset_bottom = 337.0
-text = "TwoDrive has incorporated AI sorting"
+text = "TwoDrive has incorporated AI Filesystem."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -69,7 +69,18 @@ offset_top = 528.0
 offset_right = 448.0
 offset_bottom = 551.0
 theme_override_font_sizes/font_size = 8
-text = "Once the user signs up you'll be locked in for a 5 year contract"
+text = "Once the user signs up they will be locked in for a 5 year contract."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="." unique_id=2053803324]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 400.0
+offset_right = 464.0
+offset_bottom = 456.0
+text = "Only for the small price of 15 Liters of water per interaction at your local datacenter!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

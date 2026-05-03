@@ -40,11 +40,14 @@ text = "Decline"
 
 [node name="Label" type="Label" parent="." unique_id=174068412]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 75.0
-offset_right = 258.0
-offset_bottom = 98.0
-text = "Small Ad"
+offset_left = 104.0
+offset_top = 64.0
+offset_right = 344.0
+offset_bottom = 113.0
+text = "Hungry? Sell your data to an LLM for food stamps now!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

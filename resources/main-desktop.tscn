@@ -25,8 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="21_1wffb"]
 [ext_resource type="Texture2D" uid="uid://cx56dd1umegwc" path="res://assets/Desktop/clickedfailicon.png" id="22_4t3og"]
 [ext_resource type="Texture2D" uid="uid://fmsebqqmy803" path="res://assets/Desktop/hoverfailicon.png" id="23_p2to3"]
-[ext_resource type="PackedScene" uid="uid://c2oyvnom3vi4x" path="res://resources/popups/wide_popup.tscn" id="26_5pluv"]
-[ext_resource type="PackedScene" uid="uid://cmyqtxg3jwb5y" path="res://resources/popups/small_popup.tscn" id="27_1xfrd"]
 
 [node name="MainDesktop" type="Node2D" unique_id=1698076857]
 script = ExtResource("1_esr1u")
@@ -191,13 +189,3 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Panel2" parent="DesktopUI/PopUps" unique_id=650359437 instance=ExtResource("27_1xfrd")]
-layout_mode = 0
-offset_left = 945.0
-offset_top = 136.0
-offset_right = 1393.0
-offset_bottom = 392.0
-
-[node name="Panel" parent="DesktopUI/PopUps" unique_id=696227408 instance=ExtResource("26_5pluv")]
-layout_mode = 0

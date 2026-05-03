@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ctbnc3h2gv0d5"]
 
 [ext_resource type="Script" uid="uid://c6dli61qfq8jc" path="res://resources/popups/popup.gd" id="1_dgvh0"]
-[ext_resource type="VideoStream" uid="uid://b7d45swfehrl" path="res://assets/images/orange-cat-cat.ogv" id="2_patki"]
+[ext_resource type="VideoStream" uid="uid://cglitghyxukur" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
 
 [node name="Panel" type="Panel" unique_id=696227408]
 z_index = -1
-offset_right = 1472.0
-offset_bottom = 768.0
+offset_right = 1408.0
+offset_bottom = 704.0
 script = ExtResource("1_dgvh0")
 slop_plus = 3
 slop_minus = 18
@@ -25,10 +25,10 @@ loop = true
 
 [node name="AcceptButton" type="Button" parent="." unique_id=1938286731]
 layout_mode = 0
-offset_left = 864.0
+offset_left = 832.0
 offset_top = 448.0
-offset_right = 1280.0
-offset_bottom = 639.0
+offset_right = 1216.0
+offset_bottom = 640.0
 theme_override_font_sizes/font_size = 71
 text = "Accept"
 
@@ -43,12 +43,38 @@ text = "Decline"
 
 [node name="Label" type="Label" parent="." unique_id=174068412]
 layout_mode = 0
-offset_left = 592.0
-offset_top = 128.0
-offset_right = 946.0
-offset_bottom = 189.0
+offset_left = 408.0
+offset_top = 96.0
+offset_right = 1000.0
+offset_bottom = 157.0
 theme_override_font_sizes/font_size = 44
-text = "Large Ad Sample"
+text = "New Health Insurance Plan"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1140745749]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 216.0
+offset_right = 1056.0
+offset_bottom = 304.0
+text = "Your Health Insurance has become obsolete. You are now eligible for the new Premium Health package! This package includes private ambulance services, instant response for emergencies and quick pharmacy services."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=240379793]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 320.0
+offset_right = 888.0
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 8
+text = "None of your information will be kept private and we will sell them to all the big corporations."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]
