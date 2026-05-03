@@ -12,6 +12,7 @@ var saved_files: Array[FileData] = []
 var file_contents := {}  # key: FileData, value: String
 
 var sentence_tabs := []
+var fail_sheets = []
 
 signal file_saved
 
@@ -25,6 +26,14 @@ func start_inlook_system():
 		return
 
 	inlook_has_started = true
+	
+	add_inlook_email({
+		"from": "Seb",
+		"subject": "Last quarters data",
+		"body": "Y've attached the data.",
+		"read": true,
+		"attachments": [load("res://files/test_spreadsheet.tres")]
+	})
 
 	await get_tree().create_timer(1.0).timeout
 	add_inlook_email({

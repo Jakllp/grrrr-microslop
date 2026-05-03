@@ -9,6 +9,7 @@ var taskbaricon_scene = preload("res://resources/on_screen_elements/task_bar_ico
 var inlook_scene = preload("res://resources/window_content/InlookContent.tscn")
 var files_scene = preload("res://resources/window_content/FilesApp.tscn")
 var sentence_scene = preload("res://resources/window_content/SentenceContent.tscn")
+var fail_scene = preload("res://resources/window_content/FailContent.tscn")
 
 enum PROGRAMS {
 	FILES,
@@ -58,42 +59,50 @@ func _process(delta: float) -> void:
 	
 func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 	var program = butt.program
-	
-	# Special case for Sentence:
-	# If already open, add a new tab instead of opening a new window
+
+	# Sentence: if already open, add new tab
 	if program == PROGRAMS.SENTENCE and open_windows.has(program):
 		var sentence_window = open_windows.get(program)[0]
 		var sentence_content = sentence_window.find_child("SentenceContent", true, false)
-		
+
 		if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
 			sentence_content.add_sentence_tab()
-		
+
 		push_to_front(program)
 		return
-	
-	# Check if already exists
+
+	# Fail: if already open, add new sheet
+	if program == PROGRAMS.FAIL and open_windows.has(program):
+		var fail_window = open_windows.get(program)[0]
+		var fail_content = fail_window.find_child("FailContent", true, false)
+
+		if fail_content != null and fail_content.has_method("add_sheet"):
+			fail_content.add_sheet()
+
+		push_to_front(program)
+		return
+
+	# Other already-open apps
 	if open_windows.has(program):
 		push_to_front(program)
 		return
-	
+
 	# Check if others exist -> enable click capture
 	if not open_windows.is_empty():
 		windows_node.get_child(windows_node.get_child_count() - 1).set_click_capture(true)
-	
+
 	# Setup Window
 	var window = window_scene.instantiate()
 	var taskbar_icon = taskbaricon_scene.instantiate()
-	
+
 	open_windows.get_or_add(program, [window, open_windows.size() + 1, taskbar_icon])
 	windows_node.add_child(window)
-	
-	# Set variables
+
 	window.z_index = open_windows.get(program)[1]
 	window.icon = icon_for_program[program]
 	window.title = title_for_program[program]
 	window.position = _calculate_random_pos_near_center(window.size)
-	
-	# Content
+
 	match program:
 		PROGRAMS.FILES:
 			window.set_content(files_scene.instantiate())
@@ -103,10 +112,12 @@ func _on_desktop_icon_clicked(butt :DesktopIcon) -> void:
 			window.set_content(inlook_scene.instantiate())
 		PROGRAMS.SENTENCE:
 			window.set_content(sentence_scene.instantiate())
+		PROGRAMS.FAIL:
+			window.set_content(fail_scene.instantiate())
 
 	window.program = program
 	window.on_close.connect(_close_window)
-	
+
 	$"../DesktopUI/TaskBar/OpenPrograms".add_child(taskbar_icon)
 	taskbar_icon.program = program
 	taskbar_icon.pressed.connect(push_to_front.bind(program))
@@ -171,6 +182,31 @@ func open_sentence_file(file_data: FileData) -> void:
 
 	if sentence_content != null and sentence_content.has_method("add_sentence_tab"):
 		sentence_content.add_sentence_tab(file_data.file_name, content, file_data)
+
+func open_fail_file(file_data: SpreadsheetData) -> void:
+	# If Fail is already open, open spreadsheet inside it
+	if open_windows.has(PROGRAMS.FAIL):
+		var fail_window = open_windows.get(PROGRAMS.FAIL)[0]
+		var fail_content = fail_window.find_child("FailContent", true, false)
+
+		if fail_content != null and fail_content.has_method("open_spreadsheet"):
+			fail_content.open_spreadsheet(file_data)
+
+		push_to_front(PROGRAMS.FAIL)
+		return
+
+	# If Fail is not open, open it first
+	var fake_button := DesktopIcon.new()
+	fake_button.program = PROGRAMS.FAIL
+	_on_desktop_icon_clicked(fake_button)
+
+	var fail_window = open_windows.get(PROGRAMS.FAIL)[0]
+	var fail_content = fail_window.find_child("FailContent", true, false)
+
+	if fail_content != null and fail_content.has_method("open_spreadsheet"):
+		fail_content.open_spreadsheet(file_data)
+
+	push_to_front(PROGRAMS.FAIL)
 
 func get_saved_file_content(file_data: FileData) -> String:
 	var key = file_data.resource_path

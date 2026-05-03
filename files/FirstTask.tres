@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="FileData" format=3 uid="uid://4s3ak5wr80t1"]
+[gd_resource type="Resource" script_class="SentenceData" format=3 uid="uid://4s3ak5wr80t1"]
 
 [ext_resource type="Texture2D" uid="uid://c8k3wirhyqqxe" path="res://assets/Desktop/sentenceicon.png" id="1_tkfuu"]
-[ext_resource type="Script" uid="uid://86evqoi2ke2l" path="res://files/FileData.gd" id="2_iq67y"]
+[ext_resource type="Script" uid="uid://c01o2hvkrma4g" path="res://files/sentence_data.gd" id="2_tkfuu"]
 
 [resource]
-script = ExtResource("2_iq67y")
-file_name = "report.txt"
-icon = ExtResource("1_tkfuu")
+script = ExtResource("2_tkfuu")
 file_content = "Last Quarter's AI-Data:
 AI-Use: %
 AI-Token-Cost: $
 Hours saved: h"
+file_name = "report.sen"
+icon = ExtResource("1_tkfuu")
 program = 4
 metadata/_custom_type_script = "uid://86evqoi2ke2l"

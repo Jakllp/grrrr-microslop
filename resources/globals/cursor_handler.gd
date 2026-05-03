@@ -1,9 +1,9 @@
 extends Node
 
 var time_since_last = 0.0
-var time_per_frame = 0.5
+var time_per_frame = 0.075
 var cur_frame = 0
-var max_frames = 1
+var max_frames = 7
 
 @onready var cursor :SpriteFrames = load("res://assets/cursors/cursor.tres")
 
@@ -30,4 +30,4 @@ func advance_frame(delta :float) -> void:
 				Input.set_custom_mouse_cursor(cursor.get_frame_texture("beam", cur_frame), Input.CURSOR_IBEAM)
 			_:
 				Input.set_custom_mouse_cursor(cursor.get_frame_texture("arrow", cur_frame))
-		
+		#

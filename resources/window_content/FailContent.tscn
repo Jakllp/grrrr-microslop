@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://0byg8jo48vie"]
+
+[ext_resource type="Script" uid="uid://ccdcn31cryluh" path="res://resources/window_content/fail_content.gd" id="1_bluv4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bluv4"]
+bg_color = Color(0.015554607, 0.26731604, 0.6978361, 1)
+
+[node name="FailContent" type="Panel" unique_id=1395648113]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -720.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bluv4")
+script = ExtResource("1_bluv4")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=730795519]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

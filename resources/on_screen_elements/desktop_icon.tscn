@@ -10,6 +10,7 @@ font_size = 24
 custom_minimum_size = Vector2(180, 180)
 offset_right = 180.0
 offset_bottom = 180.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_tn1ck")
 stretch_mode = 0
 script = ExtResource("2_0r702")
