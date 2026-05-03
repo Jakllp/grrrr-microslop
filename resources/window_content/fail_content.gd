@@ -1,6 +1,6 @@
 extends Control
 
-@onready var tab_container = $TabContainer
+@onready var tab_container :TabContainer = $TabContainer
 
 var is_loading := false
 var rows := 50
@@ -145,6 +145,11 @@ func open_spreadsheet(file_data: SpreadsheetData):
 		GameData.fail_sheets = file_data.sheets.duplicate(true)
 
 	load_sheets()
+
+	for i in range(tab_container.get_tab_count()):
+		var tabname = tab_container.get_tab_title(i)
+		if tabname == file_data.file_name:
+			tab_container.current_tab = i
 
 	if tab_container.get_tab_count() == 0:
 		add_sheet("Sheet 1")
