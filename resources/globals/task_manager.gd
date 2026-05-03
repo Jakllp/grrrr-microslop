@@ -20,30 +20,32 @@ func check_task(task :Task) -> bool:
 		var sentgoal :SentenceGoal = task.task_goal
 		var attachm = sentgoal.attachment
 		var file_data = _find_file_for_task(attachm.file_name)
-		var edited_file_content = GameData.file_contents.get(file_data.resource_path)
 		
-		if file_data != null and edited_file_content != null and edited_file_content != attachm.file_content:
-			for required in sentgoal.content_contains:
-				if !edited_file_content.contains(required):
-					successful = false
-					continue
-				else: 
-					successful = true
+		if file_data != null:
+			var edited_file_content = GameData.file_contents.get(file_data.resource_path)
+			if edited_file_content != null and edited_file_content != attachm.file_content:
+				for required in sentgoal.content_contains:
+					if !edited_file_content.contains(required):
+						successful = false
+						continue
+					else: 
+						successful = true
 	elif task.task_goal is FailGoal:
 		var failgoal :FailGoal = task.task_goal
 		var attachm = failgoal.attachment
 		var file_data = _find_file_for_task(attachm.file_name)
-		var edited_file_content = GameData.file_contents.get(file_data.resource_path)
-		var cells :Dictionary = edited_file_content.get(0).get("cells")
 		
-		print("Here")
-		if file_data != null and edited_file_content != attachm.sheets:
-			for required in failgoal.content_contains:
-				if !cells.values().has(required):
-					successful = false
-					continue
-				else: 
-					successful = true
+	
+		if file_data != null:
+			var edited_file_content = GameData.file_contents.get(file_data.resource_path)
+			if edited_file_content != null and edited_file_content != attachm.sheets:
+				var cells :Dictionary = edited_file_content.get(0).get("cells")
+				for required in failgoal.content_contains:
+					if !cells.values().has(required):
+						successful = false
+						continue
+					else: 
+						successful = true
 	
 	if successful:
 		tasks_to_evaluate.erase(task)
