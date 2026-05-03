@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dvdq11yhac6te"]
-
-[ext_resource type="Script" uid="uid://blnivghyej5io" path="res://resources/components/clickable.gd" id="1_oqlua"]
-
-[node name="Clickable" type="Area2D" unique_id=1355415686 groups=["clickable"]]
-script = ExtResource("1_oqlua")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065320392]
