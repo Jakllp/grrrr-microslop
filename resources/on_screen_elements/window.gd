@@ -47,8 +47,8 @@ func _process(delta: float) -> void:
 	if hue > 1.0:
 		hue -= 1.0
 
-	var cur_modul = $MainDivision/TopBar.modulate
-	$MainDivision/TopBar.modulate = Color.from_hsv(hue, cur_modul.s, cur_modul.v, cur_modul.a)
+	var cur_modul = $MainDivision/TopBar.self_modulate
+	$MainDivision/TopBar.self_modulate = Color.from_hsv(hue, cur_modul.s, cur_modul.v, cur_modul.a)
 	
 	# Do window movement
 	if toggle_move:

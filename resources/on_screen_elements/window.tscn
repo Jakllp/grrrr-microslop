@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2g3ujux4k4c1" path="res://resources/on_screen_elements/window.gd" id="1_pcso3"]
 [ext_resource type="Texture2D" uid="uid://bhbtp3wynn8ct" path="res://assets/icons/X-Stuff/X.png" id="2_lb2bu"]
+[ext_resource type="Texture2D" uid="uid://b17ev3103re7d" path="res://assets/Desktop/defaultfoldericon.png" id="2_njvjh"]
 [ext_resource type="Texture2D" uid="uid://bmaglfa355o05" path="res://assets/icons/X-Stuff/X-Pressed.png" id="3_njvjh"]
 [ext_resource type="Texture2D" uid="uid://plpvvsqak1ec" path="res://assets/icons/X-Stuff/X-red.png" id="4_mj4it"]
 
@@ -36,7 +37,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="TopBar" type="Panel" parent="MainDivision" unique_id=299357176]
-modulate = Color(0.49019608, 1, 1, 1)
+self_modulate = Color(0.49019608, 1, 1, 1)
 clip_children = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -52,6 +53,7 @@ offset_top = -18.0
 offset_right = 42.0
 offset_bottom = 18.0
 grow_vertical = 2
+texture = ExtResource("2_njvjh")
 expand_mode = 4
 
 [node name="Title" type="Label" parent="MainDivision/TopBar" unique_id=186312483]
