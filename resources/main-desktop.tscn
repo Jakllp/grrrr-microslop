@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="21_1wffb"]
 [ext_resource type="Texture2D" uid="uid://cx56dd1umegwc" path="res://assets/Desktop/clickedfailicon.png" id="22_4t3og"]
 [ext_resource type="Texture2D" uid="uid://fmsebqqmy803" path="res://assets/Desktop/hoverfailicon.png" id="23_p2to3"]
-[ext_resource type="AudioStream" uid="uid://4nn20gvv6ucl" path="res://assets/sounds/windows-xp-startup.mp3" id="26_c3cld"]
 [ext_resource type="AudioStream" uid="uid://jft7u4pobxeh" path="res://assets/sounds/success-sound-effect.mp3" id="27_1xfrd"]
 [ext_resource type="AudioStream" uid="uid://d2tb2qupvhno3" path="res://assets/sounds/windows-xp-error.mp3" id="28_ohk5c"]
 
@@ -193,13 +192,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StartupSound" type="AudioStreamPlayer" parent="." unique_id=1261374040]
-stream = ExtResource("26_c3cld")
-volume_db = -10.0
-
 [node name="SuccessSound" type="AudioStreamPlayer" parent="." unique_id=824417122]
 stream = ExtResource("27_1xfrd")
 
 [node name="FailSound" type="AudioStreamPlayer" parent="." unique_id=415999143]
 stream = ExtResource("28_ohk5c")
-volume_db = -10.0
+volume_db = -27.0

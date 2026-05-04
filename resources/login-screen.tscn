@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://coyviatfwi1cw"]
 
 [ext_resource type="Script" uid="uid://berysl7cnp6ja" path="res://resources/login_screen.gd" id="1_vyag6"]
+[ext_resource type="AudioStream" uid="uid://4nn20gvv6ucl" path="res://assets/sounds/windows-xp-startup.mp3" id="2_7112v"]
 
-[node name="LoginScreen" type="Control" unique_id=535412264]
+[node name="LoginScreen" type="Control" unique_id=535412264 node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vyag6")
+player = NodePath("AudioStreamPlayer")
 
 [node name="Background" type="ColorRect" parent="." unique_id=961287510]
 layout_mode = 1
@@ -104,3 +106,8 @@ offset_right = 252.0
 offset_bottom = 259.0
 mouse_default_cursor_shape = 2
 text = "Login"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=668181886]
+stream = ExtResource("2_7112v")
+volume_db = -24.0
+stream_paused = true
