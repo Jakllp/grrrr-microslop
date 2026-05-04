@@ -15,7 +15,7 @@ var sentence_tabs := []
 var fail_sheets = []
 
 var player_name = ""
-var slopmeter = 5
+var slopmeter = 85
 var notepad_text := ""
 
 signal file_saved
@@ -32,7 +32,7 @@ func reset() -> void:
 	sentence_tabs = []
 	fail_sheets = []
 	player_name = ""
-	slopmeter = 5
+	slopmeter = 85
 	notepad_text = ""
 
 #inlook emails
@@ -71,8 +71,6 @@ func start_inlook_system():
 		"read": false,
 		"attachments": [load("res://files/AI_METRICS_MASTER.tres")]
 	})
-	
-signal inlook_new_email(email)
 
 func add_task(task :Task):
 	if task.task_goal is SentenceGoal or task.task_goal is FailGoal:

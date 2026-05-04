@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://ednu2ua30hwp"]
 
 [ext_resource type="Script" uid="uid://shwf1o0bmm47" path="res://resources/end_screens/game_over.gd" id="1_mm841"]
-[ext_resource type="Texture2D" uid="uid://d1lop4hmt2grq" path="res://assets/images/meme-get-paid-enough.jpg" id="2_ywm1h"]
 [ext_resource type="AudioStream" uid="uid://cup4g10k71oqf" path="res://assets/sounds/yay-sound-effect.mp3" id="3_ywm1h"]
 
-[node name="GameOverGood" type="Control" unique_id=1967963354 node_paths=PackedStringArray("slop_bar", "player")]
+[node name="GameOverGood" type="Control" unique_id=1967963354 node_paths=PackedStringArray("slop_bar", "player", "background")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,56 +11,59 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mm841")
-slop_bar = NodePath("TextureRect/ProgressBar")
+slop_bar = NodePath("TextureRect/Panel/ProgressBar")
 player = NodePath("AudioStreamPlayer")
+background = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1354166890]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_ywm1h")
 
-[node name="Panel" type="Panel" parent="TextureRect" unique_id=1869700624]
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=1987073036]
+self_modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 1668.0
+offset_bottom = 896.0
 
-[node name="RestartGameButton" type="Button" parent="TextureRect" unique_id=1065196667]
+[node name="RestartGameButton" type="Button" parent="TextureRect/Panel" unique_id=1065196667]
 layout_mode = 0
-offset_left = 864.0
-offset_top = 768.0
-offset_right = 1056.0
-offset_bottom = 840.0
+offset_left = 608.0
+offset_top = 576.0
+offset_right = 800.0
+offset_bottom = 648.0
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
-[node name="ProgressBar" type="ProgressBar" parent="TextureRect" unique_id=353231126]
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect/Panel" unique_id=353231126]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 384.0
-offset_right = 1408.0
-offset_bottom = 448.0
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 256.0
 theme_override_colors/font_color = Color(0.99215686, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 value = 50.0
 
-[node name="CongratulationsMessage" type="Label" parent="TextureRect" unique_id=1051660271]
+[node name="CongratulationsMessage" type="Label" parent="TextureRect/Panel" unique_id=1051660271]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 512.0
-offset_right = 1585.0
-offset_bottom = 579.0
+offset_left = 88.0
+offset_top = 320.0
+offset_right = 1329.0
+offset_bottom = 387.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
 theme_override_font_sizes/font_size = 48
 text = "Congratulations on finishing your workload for today!"
 
-[node name="AritificialIntelligenceMeter" type="Label" parent="TextureRect" unique_id=1973336420]
+[node name="AritificialIntelligenceMeter" type="Label" parent="TextureRect/Panel" unique_id=1973336420]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 328.0
-offset_right = 1062.0
-offset_bottom = 373.0
+offset_left = 600.0
+offset_top = 136.0
+offset_right = 806.0
+offset_bottom = 181.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
 theme_override_font_sizes/font_size = 32
 text = "AI Slop Meter"
@@ -70,4 +72,4 @@ text = "AI Slop Meter"
 stream = ExtResource("3_ywm1h")
 volume_db = -19.0
 
-[connection signal="pressed" from="TextureRect/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="TextureRect/Panel/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
