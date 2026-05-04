@@ -80,4 +80,7 @@ func _find_file_for_task(name :String) -> FileData:
 	return null
 
 func check_end_of_day() -> bool:
+	for task in tasks_to_evaluate:
+		check_task(task)
+	
 	return tasks_to_evaluate.is_empty()

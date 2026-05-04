@@ -57,6 +57,11 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Sep" type="HSeparator" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=68791547]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=1127503126]
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -70,7 +75,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 vertical_alignment = 1
 
+[node name="AttachmentSeparator" type="HSeparator" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=1749213847]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
 [node name="AttachmentsContainer" type="HBoxContainer" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=726318737]
 layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
 
 [node name="NewMailSound" type="AudioStreamPlayer2D" parent="." unique_id=571339639]

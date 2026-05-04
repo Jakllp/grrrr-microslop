@@ -5,8 +5,9 @@ extends Control
 @onready var from_label = $HBoxContainer/EmailReadPanel/VBoxContainer/FromLabel
 @onready var body_label = $HBoxContainer/EmailReadPanel/VBoxContainer/MarginContainer/BodyLabel
 @onready var new_mail_sound = $NewMailSound
+@onready var sep = $HBoxContainer/EmailReadPanel/VBoxContainer/Sep
+@onready var attachments_separator = $HBoxContainer/EmailReadPanel/VBoxContainer/AttachmentSeparator
 @onready var attachments_container = $HBoxContainer/EmailReadPanel/VBoxContainer/AttachmentsContainer
-
 	
 func _ready():
 	# listen for new emails (background system)
@@ -59,11 +60,15 @@ func open_email(email, button):
 	var email_content :String = email["body"]
 	email_content = email_content.replace("%NAME%", GameData.player_name)
 	body_label.text = email_content
+	
+	if !sep.visible:
+		sep.visible = true
 
 	for child in attachments_container.get_children():
 		child.queue_free()
 
 	if email.has("attachments") and !email.get("attachments").is_empty():
+		attachments_separator.visible = true
 		for file in email["attachments"]:
 			var btn := Button.new()
 			
@@ -84,7 +89,8 @@ func open_email(email, button):
 			)
 
 			attachments_container.add_child(btn)
-	
+	else:
+		attachments_separator.visible = false
 	
 	if email.has("task") and email["task"] != null:
 		var btn := Button.new()
