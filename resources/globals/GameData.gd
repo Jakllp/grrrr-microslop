@@ -44,7 +44,7 @@ func start_inlook_system():
 
 	await get_tree().create_timer(1.0).timeout
 	add_inlook_email({
-		"from": "System Admin",
+		"from": "System",
 		"subject": "Welcome to Inlook",
 		"body": "Your new email client has been installed successfully.",
 		"read": false,
@@ -55,9 +55,7 @@ func start_inlook_system():
 	add_inlook_email({
 		"from": "Lina (Data Intern)",
 		"subject": "uhh use this i think",
-		"body": "
-		
-				hey
+		"body": "hey
 
 				this is like the main sheet everyone uses (i think)
 					dont change anything inside it or it breaks stuff
@@ -66,8 +64,7 @@ func start_inlook_system():
 
 				also if something looks wrong just ignore it (lol)
 
-				-lina
-				",
+				-lina",
 		"read": false,
 		"attachments": [load("res://files/AI_METRICS_MASTER.tres")]
 	})

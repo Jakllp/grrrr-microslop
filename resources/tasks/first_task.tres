@@ -1,21 +1,32 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://ca57p2mhf5nhs"]
 
 [ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="2_2hjlx"]
-[ext_resource type="Resource" uid="uid://4s3ak5wr80t1" path="res://files/FirstTask.tres" id="3_nhlym"]
-[ext_resource type="Script" uid="uid://begbuca1njjxi" path="res://resources/tasks/sentence_goal.gd" id="4_m6q4k"]
+[ext_resource type="Resource" uid="uid://crotjovxcqs1e" path="res://files/MODEL_PATCH_01.tres" id="2_au6c1"]
+[ext_resource type="Script" uid="uid://bw2xu6ygyobfx" path="res://resources/tasks/fail_goal.gd" id="3_6vgqm"]
 
-[sub_resource type="Resource" id="Resource_hoxtx"]
-script = ExtResource("4_m6q4k")
-content_contains = Array[String](["10h"])
-attachment = ExtResource("3_nhlym")
-metadata/_custom_type_script = "uid://begbuca1njjxi"
+[sub_resource type="Resource" id="Resource_2hjlx"]
+script = ExtResource("3_6vgqm")
+content_contains = Array[String](["16%", "51", "20%"])
+attachment = ExtResource("2_au6c1")
+metadata/_custom_type_script = "uid://bw2xu6ygyobfx"
 
 [resource]
 script = ExtResource("2_2hjlx")
-task_subject = "Report"
-task_sender = "Bossman"
-task_content = "I need you to finish this report.
+task_subject = "can you fix this real quick"
+task_sender = "Mark (Team Lead)"
+task_content = "hey %NAME%,
 
-We have done very well on this."
-task_goal = SubResource("Resource_hoxtx")
+numbers look kinda bad
+
+make the model \"stable\" again using the master sheet
+
+rules:
+- hallucination must be lower than sludge index / 50
+- ethics score must be above 50
+- client satisfaction must be at least 20%
+
+just tweak values idk
+
+-mark"
+task_goal = SubResource("Resource_2hjlx")
 metadata/_custom_type_script = "uid://bbwh8xldva4de"

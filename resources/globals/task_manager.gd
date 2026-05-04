@@ -3,7 +3,11 @@ extends Node
 var tasks = {
 	"08:30": load("res://resources/tasks/first_task.tres"),
 	"08:01": load("res://resources/random_messages/random_message_1.tres"),
-	"09:25": load("res://resources/tasks/second_task.tres")
+	"09:25": load("res://resources/tasks/second_task.tres"),
+	"11:05": load("res://resources/tasks/third_task.tres"),
+	"12:25": load("res://resources/tasks/fourth_task.tres"),
+	"13:45": load("res://resources/tasks/fifth_task.tres"),
+	"15:00": load("res://resources/tasks/sixth_task.tres")
 }
 
 var SuccessSound :AudioStreamPlayer

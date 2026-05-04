@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SentenceData" format=3 uid="uid://cyuijqgsnaher"]
+
+[ext_resource type="Script" uid="uid://c01o2hvkrma4g" path="res://files/sentence_data.gd" id="1_deoye"]
+[ext_resource type="Texture2D" uid="uid://c8k3wirhyqqxe" path="res://assets/Desktop/sentenceicon.png" id="1_ysapp"]
+
+[resource]
+script = ExtResource("1_deoye")
+file_content = "Our model may pose a risk to users if used incorrectly."
+file_name = "response_patch.sen"
+icon = ExtResource("1_ysapp")
+program = 4
+metadata/_custom_type_script = "uid://c01o2hvkrma4g"

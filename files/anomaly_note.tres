@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SentenceData" format=3 uid="uid://b8a8qh3qftgd2"]
+
+[ext_resource type="Texture2D" uid="uid://c8k3wirhyqqxe" path="res://assets/Desktop/sentenceicon.png" id="1_8h2dq"]
+[ext_resource type="Script" uid="uid://c01o2hvkrma4g" path="res://files/sentence_data.gd" id="1_xjqh4"]
+
+[resource]
+script = ExtResource("1_xjqh4")
+file_content = "There is a discrepancy in the system."
+file_name = "anomaly_note.sen"
+icon = ExtResource("1_8h2dq")
+program = 4
+metadata/_custom_type_script = "uid://c01o2hvkrma4g"

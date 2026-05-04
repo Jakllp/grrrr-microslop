@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bxjci7xmg4pl5"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_5g80i"]
+[ext_resource type="Script" uid="uid://begbuca1njjxi" path="res://resources/tasks/sentence_goal.gd" id="2_jigb8"]
+[ext_resource type="Resource" uid="uid://b8a8qh3qftgd2" path="res://files/anomaly_note.tres" id="2_qtyem"]
+
+[sub_resource type="Resource" id="Resource_qtyem"]
+script = ExtResource("2_jigb8")
+content_contains = Array[String](["index", "sludge", "847", "ethics", "score", "41", "unusual"])
+attachment = ExtResource("2_qtyem")
+metadata/_custom_type_script = "uid://begbuca1njjxi"
+
+[resource]
+script = ExtResource("1_5g80i")
+task_subject = "something looks off"
+task_sender = "Data QA"
+task_content = "something is wrong with the model
+
+rules:
+- mention sludge index
+- compare it to ethics score
+- suggest its \"unusual\""
+task_goal = SubResource("Resource_qtyem")
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

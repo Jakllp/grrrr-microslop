@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SpreadsheetData" format=3 uid="uid://vg0bctiaojfu"]
+
+[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="1_ij6ps"]
+[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="1_kbkht"]
+
+[resource]
+script = ExtResource("1_kbkht")
+sheets = Array[Dictionary]([{
+"cells": {
+"A1": "REALITY_DRIFT",
+"A2": "TRUTH_DECAY",
+"A3": "ERROR_SPIRAL",
+"A4": "HUMAN_CONFUSION",
+"B1": "30",
+"B2": "63",
+"B3": "120",
+"B4": "92"
+},
+"title": "REALITY_FIX.fai"
+}])
+file_name = "REALITY_FIX.fai"
+icon = ExtResource("1_ij6ps")
+program = 5
+metadata/_custom_type_script = "uid://caxlxb01b5wrf"

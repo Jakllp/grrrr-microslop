@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpreadsheetData" format=3 uid="uid://dy7igbkpk15pf"]
+
+[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="1_2o75h"]
+[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="1_05f3s"]
+
+[resource]
+script = ExtResource("1_2o75h")
+sheets = Array[Dictionary]([{
+"title": "math_homework.fai"
+}])
+file_name = "math_homework.fai"
+icon = ExtResource("1_05f3s")
+program = 5
+metadata/_custom_type_script = "uid://caxlxb01b5wrf"

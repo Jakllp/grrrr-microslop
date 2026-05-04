@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpreadsheetData" format=3 uid="uid://crotjovxcqs1e"]
+
+[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="1_3d40v"]
+[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="1_w6mfi"]
+
+[resource]
+script = ExtResource("1_3d40v")
+sheets = Array[Dictionary]([{
+"cells": {
+"A1": "HALLUCINATION",
+"A2": "ETHICS_SCORE",
+"A3": "CLIENT_SAT",
+"B1": "45%",
+"B2": "30",
+"B3": "10%"
+},
+"title": "MODEL_PATCH_01.fai"
+}])
+file_name = "MODEL_PATCH_01.fai"
+icon = ExtResource("1_w6mfi")
+program = 5
+metadata/_custom_type_script = "uid://caxlxb01b5wrf"
