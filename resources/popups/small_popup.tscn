@@ -4,13 +4,16 @@
 [ext_resource type="VideoStream" uid="uid://cfe1r4uoi005q" path="res://assets/images/Mandelbrot_sequence_new.ogv" id="2_8npvh"]
 [ext_resource type="AudioStream" uid="uid://by0ym03qg5ren" path="res://assets/sounds/buzzing-noise-sound.mp3" id="3_efnch"]
 
-[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player")]
+[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player", "dec_button", "acc_button", "spawn_area")]
 z_index = -1
 offset_right = 448.0
 offset_bottom = 256.0
 script = ExtResource("1_74hly")
 slop_minus = 3
 player = NodePath("AudioStreamPlayer")
+dec_button = NodePath("DeclineButton")
+acc_button = NodePath("AcceptButton")
+spawn_area = NodePath("Panel")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1820579610]
 layout_mode = 1
@@ -54,6 +57,14 @@ autowrap_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1798205958]
 stream = ExtResource("3_efnch")
 volume_db = -28.108
+
+[node name="Panel" type="Panel" parent="." unique_id=901465199]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 126.0
+offset_right = 440.0
+offset_bottom = 250.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

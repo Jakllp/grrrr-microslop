@@ -4,13 +4,16 @@
 [ext_resource type="VideoStream" uid="uid://cglitghyxukur" path="res://assets/images/AI brainrot.ogv" id="2_patki"]
 [ext_resource type="AudioStream" uid="uid://ct00uqyldl0mu" path="res://assets/sounds/tralalero-tralala-meme.mp3" id="3_ubk0p"]
 
-[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player")]
+[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player", "dec_button", "acc_button", "spawn_area")]
 z_index = -1
 offset_right = 1408.0
 offset_bottom = 704.0
 script = ExtResource("1_dgvh0")
 slop_minus = 3
 player = NodePath("AudioStreamPlayer")
+dec_button = NodePath("DeclineButton")
+acc_button = NodePath("AcceptButton")
+spawn_area = NodePath("Panel")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1062297582]
 layout_mode = 1
@@ -80,6 +83,14 @@ autowrap_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1862954081]
 stream = ExtResource("3_ubk0p")
 volume_db = -23.31
+
+[node name="Panel" type="Panel" parent="." unique_id=1216429537]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 355.0
+offset_right = 1385.0
+offset_bottom = 686.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]

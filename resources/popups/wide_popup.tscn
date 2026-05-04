@@ -4,13 +4,15 @@
 [ext_resource type="VideoStream" uid="uid://bsnfjvs8fudyn" path="res://assets/images/ai-pigeon-benjammins.ogv" id="2_vo5ua"]
 [ext_resource type="AudioStream" uid="uid://ng2puurtxh6a" path="res://assets/sounds/vine-boom.mp3" id="3_rf84y"]
 
-[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player")]
+[node name="Panel" type="Panel" unique_id=696227408 node_paths=PackedStringArray("player", "dec_button", "acc_button")]
 z_index = -1
 offset_right = 1344.0
 offset_bottom = 320.0
 script = ExtResource("1_g6v46")
 slop_minus = 3
 player = NodePath("AudioStreamPlayer")
+dec_button = NodePath("DeclineButton")
+acc_button = NodePath("AcceptButton")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1059903123]
 layout_mode = 1
@@ -64,6 +66,14 @@ autowrap_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=712720013]
 stream = ExtResource("3_rf84y")
 volume_db = -25.0
+
+[node name="Panel" type="Panel" parent="." unique_id=561684027]
+visible = false
+layout_mode = 0
+offset_left = 720.0
+offset_top = 9.0
+offset_right = 1336.0
+offset_bottom = 312.0
 
 [connection signal="pressed" from="AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="DeclineButton" to="." method="_on_decline_button_pressed"]
