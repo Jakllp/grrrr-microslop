@@ -1,24 +1,13 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://qvq2k27agb21"]
 
 [ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_r6xga"]
-[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="2_br20j"]
-[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="3_3qtp1"]
+[ext_resource type="Resource" uid="uid://dy7igbkpk15pf" path="res://files/Math_Task.tres" id="2_8ru1a"]
 [ext_resource type="Script" uid="uid://bw2xu6ygyobfx" path="res://resources/tasks/fail_goal.gd" id="4_n6f0l"]
-
-[sub_resource type="Resource" id="Resource_pb23l"]
-script = ExtResource("3_3qtp1")
-sheets = Array[Dictionary]([{
-"title": "math_homework.fai"
-}])
-file_name = "math_homework.fai"
-icon = ExtResource("2_br20j")
-program = 5
-metadata/_custom_type_script = "uid://caxlxb01b5wrf"
 
 [sub_resource type="Resource" id="Resource_jenvq"]
 script = ExtResource("4_n6f0l")
-content_contains = Array[String](["43", "-5", "-1"])
-attachment = SubResource("Resource_pb23l")
+content_contains = Array[String](["8", "49", "124"])
+attachment = ExtResource("2_8ru1a")
 metadata/_custom_type_script = "uid://bw2xu6ygyobfx"
 
 [resource]

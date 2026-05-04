@@ -6,6 +6,11 @@
 [resource]
 script = ExtResource("1_2o75h")
 sheets = Array[Dictionary]([{
+"cells": {
+"A1": "4+4",
+"A2": "7*7",
+"A3": "12*12-20"
+},
 "title": "math_homework.fai"
 }])
 file_name = "math_homework.fai"
