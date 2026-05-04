@@ -85,7 +85,7 @@ func add_sheet(name := ""):
 	if not is_loading:
 		save_sheets()
 
-func save_sheets():
+func save_sheets(_void :String = "") -> void:
 	if is_loading:
 		return
 
