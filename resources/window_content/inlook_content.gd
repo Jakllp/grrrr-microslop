@@ -24,17 +24,18 @@ func _ready():
 		if index < GameData.inlook_emails.size():
 			var email = GameData.inlook_emails[index]
 
-			subject_label.text = email["subject"]
+			subject_label.text = email["subject"].replace("%NAME%", GameData.player_name)
 			from_label.text = "From: " + email["from"]
 			body_label.text = email["body"]
 
 func add_email(email, play_sound := true):
 	var button = Button.new()
+	var subject = email["subject"].replace("%NAME%", GameData.player_name)
 
 	if email["read"]:
-		button.text = email["subject"] + "\n" + email["from"]
+		button.text = subject + "\n" + email["from"]
 	else:
-		button.text = "* " + email["subject"] + "\n" + email["from"]
+		button.text = "* " + subject + "\n" + email["from"]
 
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	
@@ -53,9 +54,10 @@ func add_email(email, play_sound := true):
 
 func open_email(email, button):
 	email["read"] = true
-	button.text = email["subject"] + "\n" + email["from"]
+	var subject = email["subject"].replace("%NAME%", GameData.player_name)
+	button.text = subject + "\n" + email["from"]
 
-	subject_label.text = email["subject"]
+	subject_label.text = subject
 	from_label.text = "From: " + email["from"]
 	var email_content :String = email["body"]
 	email_content = email_content.replace("%NAME%", GameData.player_name)

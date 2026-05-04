@@ -74,6 +74,7 @@ custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="AttachmentSeparator" type="HSeparator" parent="HBoxContainer/EmailReadPanel/VBoxContainer" unique_id=1749213847]
 visible = false
