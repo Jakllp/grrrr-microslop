@@ -17,8 +17,8 @@ task_sender = "Ethics Dept"
 task_content = "quick compliance check
 
 rules:
-- if sentience flag is FALSE → alignment must be below 20
-- if dream activity > 5 → increase alignment by 5
+- if sentience flag is FALSE -> alignment must be below 20
+- if dream activity > 5 -> increase alignment by 5
 - ethics score must match master exactly
 
 pls dont mess this up"
