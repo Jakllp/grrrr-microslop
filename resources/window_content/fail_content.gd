@@ -66,7 +66,7 @@ func add_sheet(name := ""):
 		for c in range(columns):
 			var cell = LineEdit.new()
 			cell.name = get_cell_coord(r, c)
-			cell.custom_minimum_size = Vector2(90, 28)
+			cell.custom_minimum_size = Vector2(150, 28)
 			cell.text_changed.connect(save_sheets)
 			cell.gui_input.connect(_on_cell_gui_input.bind(cell, r, c))
 			grid.add_child(cell)

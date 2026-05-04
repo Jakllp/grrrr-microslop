@@ -26,14 +26,6 @@ func start_inlook_system():
 		return
 
 	inlook_has_started = true
-	
-	add_inlook_email({
-		"from": "Seb",
-		"subject": "Last quarters data",
-		"body": "I've attached the data.",
-		"read": true,
-		"attachments": [load("res://files/test_spreadsheet.tres")]
-	})
 
 	await get_tree().create_timer(1.0).timeout
 	add_inlook_email({
@@ -42,6 +34,27 @@ func start_inlook_system():
 		"body": "Your new email client has been installed successfully.",
 		"read": false,
 		"attachments": []
+	})
+	
+	await get_tree().create_timer(1.0).timeout
+	add_inlook_email({
+		"from": "Lina (Data Intern)",
+		"subject": "uhh use this i think",
+		"body": "
+		
+				hey
+
+				this is like the main sheet everyone uses (i think)
+					dont change anything inside it or it breaks stuff
+
+				you’ll probably need values from here all day
+
+				also if something looks wrong just ignore it (lol)
+
+				-lina
+				",
+		"read": false,
+		"attachments": [load("res://files/AI_METRICS_MASTER.tres")]
 	})
 	
 signal inlook_new_email(email)
