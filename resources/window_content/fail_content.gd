@@ -142,13 +142,9 @@ func open_spreadsheet(file_data: SpreadsheetData):
 	var key = file_data.resource_path
 
 	if GameData.file_contents.has(key):
-		for sheet in GameData.file_contents[key].duplicate(true):
-			if !GameData.fail_sheets.has(sheet):
-				GameData.fail_sheets.append(sheet)
+		GameData.fail_sheets = GameData.file_contents[key].duplicate(true)
 	else:
-		for sheet in file_data.sheets.duplicate(true):
-			if !GameData.fail_sheets.has(sheet):
-				GameData.fail_sheets.append(sheet)
+		GameData.fail_sheets = file_data.sheets.duplicate(true)
 
 	load_sheets()
 
