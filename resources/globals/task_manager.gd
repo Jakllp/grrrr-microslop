@@ -2,7 +2,7 @@ extends Node
 
 var tasks = {
 	"08:30": load("res://resources/tasks/first_task.tres"),
-	"08:50": load("res://resources/tasks/random_message_1.tres"),
+	"08:01": load("res://resources/random_messages/random_message_1.tres"),
 	"09:25": load("res://resources/tasks/second_task.tres")
 }
 

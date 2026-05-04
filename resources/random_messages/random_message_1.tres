@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://bdcumkkv0mcfe"]
 
-[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_06tlc"]
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_3dbbh"]
 
 [resource]
-script = ExtResource("1_06tlc")
-task_subject = "This is a test"
-task_sender = "Me"
-task_content = "This should not have task shit"
+script = ExtResource("1_3dbbh")
+task_subject = "Hi!"
+task_sender = "Your secret lover"
+task_content = "Hello %NAME%!"
 metadata/_custom_type_script = "uid://bbwh8xldva4de"
