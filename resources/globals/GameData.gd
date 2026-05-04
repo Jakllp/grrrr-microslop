@@ -32,7 +32,7 @@ func reset() -> void:
 	sentence_tabs = []
 	fail_sheets = []
 	player_name = ""
-	slopmeter = 85
+	slopmeter = 5
 	notepad_text = ""
 
 #inlook emails

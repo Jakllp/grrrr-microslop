@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://jft7u4pobxeh" path="res://assets/sounds/success-sound-effect.mp3" id="27_1xfrd"]
 [ext_resource type="AudioStream" uid="uid://d2tb2qupvhno3" path="res://assets/sounds/windows-xp-error.mp3" id="28_ohk5c"]
 [ext_resource type="AudioStream" uid="uid://g3rgi2ycy3bk" path="res://assets/sounds/bell-sound-effect.mp3" id="28_wmmqq"]
-[ext_resource type="Script" uid="uid://r4k1lbhxblys" path="res://resources/inlook_notification_sound.gd" id="29_8hqya"]
+[ext_resource type="Script" path="res://resources/inlook_notification_sound.gd" id="29_8hqya"]
 
 [node name="MainDesktop" type="Node2D" unique_id=1698076857]
 script = ExtResource("1_esr1u")
