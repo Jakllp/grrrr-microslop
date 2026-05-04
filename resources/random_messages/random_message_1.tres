@@ -4,7 +4,15 @@
 
 [resource]
 script = ExtResource("1_3dbbh")
-task_subject = "Hi!"
-task_sender = "Your secret lover"
-task_content = "Hello %NAME%!"
+task_subject = "do NOT open column F"
+task_sender = "QA"
+task_content = "hey %NAME%,
+
+whatever you do dont open column F in the master sheet
+
+last time it desynced everything
+
+not joking
+
+ok maybe a little joking but still dont"
 metadata/_custom_type_script = "uid://bbwh8xldva4de"

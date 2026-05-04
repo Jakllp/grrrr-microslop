@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://fc1xv3b3syjt"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_4pvns"]
+
+[resource]
+script = ExtResource("1_4pvns")
+task_subject = "small thing"
+task_sender = "DevOps"
+task_content = "gpu melt went from 3% to 9% and then back to 3%
+
+logs show nothing
+
+im choosing not to look into it further"
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

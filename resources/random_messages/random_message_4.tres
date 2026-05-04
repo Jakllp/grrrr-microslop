@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://b8i2h0hcgjgdu"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_x3dmt"]
+
+[resource]
+script = ExtResource("1_x3dmt")
+task_subject = "lunch?"
+task_sender = "Brad"
+task_content = "anyone going to lunch
+
+also why does the model keep outputting the same sentence about birds
+
+like every time
+
+not related just asking"
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

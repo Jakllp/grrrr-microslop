@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bo2xr2b0h8ni4"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_rhl6r"]
+
+[resource]
+script = ExtResource("1_rhl6r")
+task_subject = "numbers moved again"
+task_sender = "Lina"
+task_content = "uhh, %NAME%?
+
+i swear the numbers were different earlier
+
+like hallucination was 19% not 23%
+
+if it changes again just ignore it i guess"
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

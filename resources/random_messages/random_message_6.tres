@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bh3hrtydejhea"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_3kt37"]
+
+[resource]
+script = ExtResource("1_3kt37")
+task_subject = "dont respond to it"
+task_sender = "IT"
+task_content = "hi %NAME%,
+
+if you get an email from \"System (Old)\"
+
+do not reply
+
+do not open attachments
+
+we dont have anything called that anymore"
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://b4218k4ujbipv"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_cwuio"]
+
+[resource]
+script = ExtResource("1_cwuio")
+task_subject = "re: %NAME% "
+task_sender = "System (Old)"
+task_content = "%NAME% %NAME% %NAME%
+
+%NAME%
+%NAME% 
+
+%NAME%?
+
+%NAME%."
+metadata/_custom_type_script = "uid://bbwh8xldva4de"

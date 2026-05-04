@@ -1,8 +1,16 @@
 extends Node
 
 var tasks = {
+	#random msgs
+	"08:20": load("res://resources/random_messages/random_message_1.tres"),
+	"10:05": load("res://resources/random_messages/random_message_6.tres"),
+	"11:25": load("res://resources/random_messages/random_message_3.tres"),
+	"13:05": load("res://resources/random_messages/random_message_4.tres"),
+	"13:55": load("res://resources/random_messages/random_message_5.tres"),
+	"15:35": load("res://resources/random_messages/random_message_2.tres"),
+	"15:55": load("res://resources/random_messages/random_message_7.tres"),
+	#tasks
 	"08:30": load("res://resources/tasks/first_task.tres"),
-	"08:01": load("res://resources/random_messages/random_message_1.tres"),
 	"09:25": load("res://resources/tasks/second_task.tres"),
 	"11:05": load("res://resources/tasks/third_task.tres"),
 	"12:25": load("res://resources/tasks/fourth_task.tres"),

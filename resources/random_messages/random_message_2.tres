@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://3c865ci5d55t"]
+
+[ext_resource type="Script" uid="uid://bbwh8xldva4de" path="res://resources/tasks/task_base.gd" id="1_bp3oo"]
+
+[resource]
+script = ExtResource("1_bp3oo")
+task_subject = "quick rename"
+task_sender = "Branding"
+task_content = "can we stop calling it sludge index
+
+client didnt like it
+
+maybe \"fluid intelligence density\" or something
+
+idk just make it sound expensive"
+metadata/_custom_type_script = "uid://bbwh8xldva4de"
