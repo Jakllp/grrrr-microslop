@@ -14,11 +14,26 @@ var file_contents := {}  # key: FileData, value: String
 var sentence_tabs := []
 var fail_sheets = []
 
-signal file_saved
-
 var player_name = ""
 var slopmeter = 5
 var notepad_text := ""
+
+signal file_saved
+signal inlook_new_email(email)
+
+func reset() -> void:
+	desktop_manager = null
+	popup_manager = null
+	inlook_emails = []
+	inlook_has_started = false
+	inlook_last_opened_index = -1
+	saved_files = []
+	file_contents = {}
+	sentence_tabs = []
+	fail_sheets = []
+	player_name = ""
+	slopmeter = 5
+	notepad_text = ""
 
 #inlook emails
 func start_inlook_system():
@@ -43,8 +58,6 @@ func start_inlook_system():
 		"read": false,
 		"attachments": []
 	})
-	
-signal inlook_new_email(email)
 
 func add_task(task :Task):
 	if task.task_goal is SentenceGoal or task.task_goal is FailGoal:

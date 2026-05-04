@@ -10,6 +10,11 @@ var FailSound :AudioStreamPlayer
 
 var tasks_to_evaluate :Array[Task] = []
 
+func reset() -> void:
+	SuccessSound = null
+	FailSound = null
+	tasks_to_evaluate = []
+
 func check_trigger_task(time_string :String) -> void:
 	var task :Task = tasks.get(time_string)
 	if task != null and !tasks_to_evaluate.has(task):
