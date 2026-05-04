@@ -89,9 +89,9 @@ vertical_alignment = 1
 
 [node name="HintLabel" type="Label" parent="LoginPanel" unique_id=1062362637]
 layout_mode = 0
-offset_left = 67.0
+offset_left = 49.0
 offset_top = 198.0
-offset_right = 421.66675
+offset_right = 461.0
 offset_bottom = 223.0
 scale = Vector2(0.75, 0.75)
 theme_override_colors/font_color = Color(1, 0.40724552, 0.338652, 1)
