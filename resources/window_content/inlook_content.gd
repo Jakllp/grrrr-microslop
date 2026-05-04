@@ -56,7 +56,9 @@ func open_email(email, button):
 
 	subject_label.text = email["subject"]
 	from_label.text = "From: " + email["from"]
-	body_label.text = email["body"]
+	var email_content :String = email["body"]
+	email_content = email_content.replace("%NAME%", GameData.player_name)
+	body_label.text = email_content
 
 	for child in attachments_container.get_children():
 		child.queue_free()
@@ -64,7 +66,12 @@ func open_email(email, button):
 	if !email.get("attachments").is_empty():
 		for file in email["attachments"]:
 			var btn := Button.new()
-			btn.text = file.file_name
+			
+			if GameData.check_file_saved(file):
+				btn.text = "Saved!"
+				btn.disabled = true
+			else:
+				btn.text = file.file_name
 
 			if file.icon:
 				btn.icon = file.icon
@@ -82,7 +89,11 @@ func open_email(email, button):
 	if email.has("task") and email["task"] != null:
 		var btn := Button.new()
 		var task = email["task"]
-		btn.text = "Check completion!"
+		if TaskManager.tasks_to_evaluate.has(task):
+			btn.text = "Check completion!"
+		else:
+			btn.disabled = true
+			btn.text = "Completed!"
 
 		btn.pressed.connect(func():
 			var check = TaskManager.check_task(task)

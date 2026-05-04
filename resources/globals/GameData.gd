@@ -70,4 +70,9 @@ func save_file(file: FileData) -> void:
 
 	saved_files.append(file)
 	file_saved.emit()
-	
+
+func check_file_saved(query_file :FileData) -> bool:
+	for file in saved_files:
+		if file.file_name == query_file.file_name:
+			return true
+	return false
