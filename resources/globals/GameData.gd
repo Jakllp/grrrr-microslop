@@ -15,7 +15,7 @@ var sentence_tabs := []
 var fail_sheets = []
 
 var player_name = ""
-var slopmeter = 85
+var slopmeter = 5
 var notepad_text := ""
 
 signal file_saved

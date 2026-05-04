@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://berysl7cnp6ja" path="res://resources/login_screen.gd" id="1_vyag6"]
 [ext_resource type="AudioStream" uid="uid://4nn20gvv6ucl" path="res://assets/sounds/windows-xp-startup.mp3" id="2_7112v"]
+[ext_resource type="Texture2D" uid="uid://cavof1ervbpfl" path="res://assets/images/Copilot_20260504_121749.png" id="2_etbij"]
 
 [node name="LoginScreen" type="Control" unique_id=535412264 node_paths=PackedStringArray("player")]
 layout_mode = 3
@@ -9,14 +10,11 @@ anchors_preset = 0
 script = ExtResource("1_vyag6")
 player = NodePath("AudioStreamPlayer")
 
-[node name="Background" type="ColorRect" parent="." unique_id=961287510]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.22677776, 0.31375915, 0.36163056, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=118670935]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_etbij")
 
 [node name="LoginPanel" type="Panel" parent="." unique_id=282672486]
 layout_mode = 0
@@ -89,14 +87,14 @@ vertical_alignment = 1
 
 [node name="HintLabel" type="Label" parent="LoginPanel" unique_id=1062362637]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 198.0
-offset_right = 461.0
-offset_bottom = 223.0
-scale = Vector2(0.75, 0.75)
+offset_left = 16.0
+offset_top = 194.0
+offset_right = 386.0
+offset_bottom = 219.0
 theme_override_colors/font_color = Color(1, 0.40724552, 0.338652, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="LoginButton" type="Button" parent="LoginPanel" unique_id=202014179]
 layout_mode = 0
