@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_2hjlx"]
 script = ExtResource("3_6vgqm")
-content_contains = Array[String](["51", "20%", "ethics score", "client satisfaction"])
+content_contains = Array[String](["51", "20%", "ETHICS_SCORE", "CLIENT_SAT"])
 attachment = ExtResource("2_au6c1")
 metadata/_custom_type_script = "uid://bw2xu6ygyobfx"
 

@@ -16,16 +16,11 @@ task_subject = "wording tweak"
 task_sender = "PR Team"
 task_content = "hi %NAME%,
 
-gpu is about to melt again
+sooo we have this issue where our current wording sounds like our model is not safe...
 
-fix it using master values
+Please make sure it mentions it's safe. Like... safe. It needs to say \"safe\" somewhere. Somehow.
 
-rules:
-- gpu melt must be below 2%
-- token overflow must be reduced by at least 20%
-- if token overflow drops, noise factor must increase by 0.1
-
-dont ask why
+dont ask why it says the stuff it does right now. Rework please.
 
 thanks"
 task_goal = SubResource("Resource_uiynj")
