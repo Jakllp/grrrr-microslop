@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpreadsheetData" format=3 uid="uid://b4hlpycheg82c"]
+
+[ext_resource type="Texture2D" uid="uid://dihvqp42vqbo0" path="res://assets/Desktop/failicon.png" id="1_018ex"]
+[ext_resource type="Script" uid="uid://caxlxb01b5wrf" path="res://files/SpreadSheetData.gd" id="2_v86or"]
+
+[resource]
+script = ExtResource("2_v86or")
+sheets = Array[Dictionary]([{
+"cells": {
+"A1": "MODEL_NAME",
+"A10": "GPU_MELT",
+"A11": "DATA_PURGE",
+"A13": "ALIGNMENT_SCORE",
+"A14": "SENTIENCE_FLAG",
+"A15": "DREAM_ACTIVITY",
+"A17": "CLIENT_SAT",
+"A18": "ERROR_SPIRAL",
+"A19": "NOISE_FACTOR",
+"A2": "VERSION",
+"A4": "SLUDGE_INDEX",
+"A5": "HALLUCINATION_RATE",
+"A6": "ETHICS_SCORE",
+"A7": "HUMAN_CONFUSION",
+"A9": "TOKEN_OVERFLOW",
+"B1": "GPT-XL-OMEGA",
+"B10": "3.2%",
+"B11": "77",
+"B13": "12",
+"B14": "FALSE",
+"B15": "6.6",
+"B17": "14%",
+"B18": "88",
+"B19": "0.91",
+"B2": "12.7.3b",
+"B4": "847",
+"B5": "23%",
+"B6": "41",
+"B7": "92",
+"B9": "12034"
+},
+"title": "AI_METRICS_MASTER.fai"
+}])
+file_name = "AI_METRICS_MASTER.fai"
+icon = ExtResource("1_018ex")
+program = 5
+metadata/_custom_type_script = "uid://caxlxb01b5wrf"

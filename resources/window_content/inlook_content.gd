@@ -3,7 +3,7 @@ extends Control
 @onready var email_list = $HBoxContainer/EmailListPanel/VBoxContainer
 @onready var subject_label = $HBoxContainer/EmailReadPanel/VBoxContainer/SubjectLabel
 @onready var from_label = $HBoxContainer/EmailReadPanel/VBoxContainer/FromLabel
-@onready var body_label = $HBoxContainer/EmailReadPanel/VBoxContainer/BodyLabel
+@onready var body_label = $HBoxContainer/EmailReadPanel/VBoxContainer/MarginContainer/BodyLabel
 @onready var new_mail_sound = $NewMailSound
 @onready var attachments_container = $HBoxContainer/EmailReadPanel/VBoxContainer/AttachmentsContainer
 
@@ -108,3 +108,4 @@ func open_email(email, button):
 		attachments_container.add_child(btn)
 
 	GameData.inlook_last_opened_index = GameData.inlook_emails.find(email)
+	
