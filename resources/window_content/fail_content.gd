@@ -131,6 +131,8 @@ func load_sheets():
 	is_loading = false
 	
 func open_spreadsheet(file_data: SpreadsheetData):
+	save_sheets()
+	
 	current_file = file_data
 	rows = file_data.rows
 	columns = file_data.columns
@@ -140,9 +142,13 @@ func open_spreadsheet(file_data: SpreadsheetData):
 	var key = file_data.resource_path
 
 	if GameData.file_contents.has(key):
-		GameData.fail_sheets = GameData.file_contents[key].duplicate(true)
+		for sheet in GameData.file_contents[key].duplicate(true):
+			if !GameData.fail_sheets.has(sheet):
+				GameData.fail_sheets.append(sheet)
 	else:
-		GameData.fail_sheets = file_data.sheets.duplicate(true)
+		for sheet in file_data.sheets.duplicate(true):
+			if !GameData.fail_sheets.has(sheet):
+				GameData.fail_sheets.append(sheet)
 
 	load_sheets()
 
