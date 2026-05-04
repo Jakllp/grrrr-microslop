@@ -11,4 +11,4 @@ func _ready() -> void:
 		player.play()
 
 func _on_restart_game_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://resources/login-screen.tscn");
+	get_tree().quit();
