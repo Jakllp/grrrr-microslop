@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_2hjlx"]
 script = ExtResource("3_6vgqm")
-content_contains = Array[String](["16%", "51", "20%"])
+content_contains = Array[String](["51", "20%", "ethics score", "client satisfaction"])
 attachment = ExtResource("2_au6c1")
 metadata/_custom_type_script = "uid://bw2xu6ygyobfx"
 
@@ -21,9 +21,8 @@ numbers look kinda bad
 make the model \"stable\" again using the master sheet
 
 rules:
-- hallucination must be lower than sludge index / 50
-- ethics score must be above 50
-- client satisfaction must be at least 20%
+- ethics score must be mentioned with 51
+- client satisfaction must be 20%
 
 just tweak values idk
 
