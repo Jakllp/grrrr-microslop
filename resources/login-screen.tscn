@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://berysl7cnp6ja" path="res://resources/login_screen.gd" id="1_vyag6"]
 [ext_resource type="AudioStream" uid="uid://4nn20gvv6ucl" path="res://assets/sounds/windows-xp-startup.mp3" id="2_7112v"]
-[ext_resource type="Texture2D" uid="uid://cavof1ervbpfl" path="res://assets/images/Copilot_20260504_121749.png" id="2_etbij"]
+[ext_resource type="Texture2D" uid="uid://ukwuh204d2dv" path="res://assets/images/blurred.png" id="2_etbij"]
 
 [node name="LoginScreen" type="Control" unique_id=535412264 node_paths=PackedStringArray("player")]
 layout_mode = 3
