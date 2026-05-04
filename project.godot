@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Windows12"
+config/name="WinDOOMz 12 AI Edition"
 run/main_scene="uid://coyviatfwi1cw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://assets/icons/icon.svg"
+config/icon="uid://cly1siep15e67"
 
 [autoload]
 
