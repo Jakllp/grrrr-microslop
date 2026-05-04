@@ -2,6 +2,7 @@ extends Node
 
 var tasks = {
 	"08:30": load("res://resources/tasks/first_task.tres"),
+	"08:50": load("res://resources/tasks/random_message_1.tres"),
 	"09:25": load("res://resources/tasks/second_task.tres")
 }
 
@@ -9,17 +10,22 @@ var SuccessSound :AudioStreamPlayer
 var FailSound :AudioStreamPlayer
 
 var tasks_to_evaluate :Array[Task] = []
+var other_tasks :Array[Task] = []
 
 func reset() -> void:
 	SuccessSound = null
 	FailSound = null
 	tasks_to_evaluate = []
+	other_tasks = []
 
 func check_trigger_task(time_string :String) -> void:
 	var task :Task = tasks.get(time_string)
-	if task != null and !tasks_to_evaluate.has(task):
+	if task != null and !tasks_to_evaluate.has(task) and !other_tasks.has(task):
 		GameData.add_task(task)
-		tasks_to_evaluate.append(task)
+		if task.task_goal != null:
+			tasks_to_evaluate.append(task)
+		else:
+			other_tasks.append(task)
 
 func check_task(task :Task) -> bool:
 	var successful := false

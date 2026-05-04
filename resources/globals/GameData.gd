@@ -73,6 +73,13 @@ func start_inlook_system():
 	})
 
 func add_task(task :Task):
+	if task.task_goal == null:
+		add_inlook_email({
+			"from": task.task_sender,
+			"subject": task.task_subject,
+			"body": task.task_content,
+			"read": false
+		})
 	if task.task_goal is SentenceGoal or task.task_goal is FailGoal:
 		add_inlook_email({
 			"from": task.task_sender,

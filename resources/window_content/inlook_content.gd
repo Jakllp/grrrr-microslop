@@ -63,7 +63,7 @@ func open_email(email, button):
 	for child in attachments_container.get_children():
 		child.queue_free()
 
-	if !email.get("attachments").is_empty():
+	if email.has("attachments") and !email.get("attachments").is_empty():
 		for file in email["attachments"]:
 			var btn := Button.new()
 			
