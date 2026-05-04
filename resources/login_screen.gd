@@ -1,5 +1,6 @@
 extends Control
 
+@export var player :AudioStreamPlayer
 @onready var username_input = $LoginPanel/UsernameInput
 @onready var password_input = $LoginPanel/PasswordInput
 @onready var error_label = $LoginPanel/ErrorLabel
@@ -14,6 +15,8 @@ func _ready():
 	await get_tree().process_frame
 	username_input.grab_focus()
 	username_input.select_all()
+	if player != null:
+		player.play()
 
 func _on_login_pressed(_text = ""):
 	var username = username_input.text.strip_edges()

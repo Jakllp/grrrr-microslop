@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1lop4hmt2grq" path="res://assets/images/meme-get-paid-enough.jpg" id="2_ywm1h"]
 [ext_resource type="AudioStream" uid="uid://cup4g10k71oqf" path="res://assets/sounds/yay-sound-effect.mp3" id="3_ywm1h"]
 
-[node name="GameOverGood" type="Control" unique_id=1967963354 node_paths=PackedStringArray("slop_bar")]
+[node name="GameOverGood" type="Control" unique_id=1967963354 node_paths=PackedStringArray("slop_bar", "player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mm841")
 slop_bar = NodePath("TextureRect/ProgressBar")
+player = NodePath("AudioStreamPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1354166890]
 layout_mode = 0
@@ -67,6 +68,6 @@ text = "AI Slop Meter"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1487020773]
 stream = ExtResource("3_ywm1h")
-volume_db = -10.0
+volume_db = -19.0
 
 [connection signal="pressed" from="TextureRect/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
